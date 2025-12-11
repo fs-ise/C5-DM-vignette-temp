@@ -37,6 +37,8 @@ bibliography: references.bib
 - For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev. BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.
 
 
+![Data structures](figures/recommendation.png)
+
 ## Search
 
 - The search strategy is stored together with the raw data files [here](temp_file.txt), in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
@@ -60,6 +62,8 @@ Preparation changes were validated using the max-diff strategy (`colrev validate
 
 ## Prescreen
 
+![Data structures](figures/illustration-lr-transparency.png)
+
 ::: {.callout-note text="TODO"}
 
 - For prescreening, we tested the new [llm-prescreener](temp_file.txt) in [ref](temp_file.txt). Comparison with prescreening decisions of GW showed low reliability with the llm-prescreener (command + kappa). Results were therefore reverted ([ref](temp_file.txt)) and a fully manual prescreen was implemented.
@@ -78,6 +82,8 @@ Note: this could also be done in a separate branch, or the changes could be undo
   - An emergent mapping study (the notes are [here](temp_file.txt) and illustrated [here](temp_file.txt))
   - A structured extraction of evidence (a preliminary coding scheme is [here](temp_file.txt) and the pilot coding [here](temp_file.txt))
 
+![Data structures](figures/data_structures.png)
+
 ## Synthesis
 
 - The narrative synthesis is in [this](temp_file.txt) document in Markdown format, allowing for larger teams to work on the same document (similar to *cite-covid-review*)
@@ -94,6 +100,6 @@ Note: this could also be done in a separate branch, or the changes could be undo
 
 ## Repository
 
-[![GitHub](https://img.shields.io/badge/code-GitHub-black)](https://github.com/digital-work-lab/project-name)
 
+- [GitHub Repository](https://github.com/digital-work-lab/project-name)
 
