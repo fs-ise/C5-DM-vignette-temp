@@ -20,7 +20,7 @@ bibliography: references.bib
 ---
 
 ::: {.callout-important}
-The data repository (colrev project) is currently stored separately: [fs-ise/C5-DM-vignette](https://github.com/fs-ise/C5-DM-vignette).
+The data repository (colrev project) is currently stored separately: [fs-ise/C5-DM-vignette](https://github.com/fs-ise/C5-DM-vignette){target=_blank}.
 
 Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet.
 
@@ -34,11 +34,11 @@ At the moment, it will be kept separately to allow for forced-push updaes.
 
 ## Plan
 
-- The review is conducted using a [shared GitHub repository](https://github.com/fs-ise/C5-DM-vignette), which was be synchronized locally by the team
+- The review is conducted using a [shared GitHub repository](https://github.com/fs-ise/C5-DM-vignette){target=_blank}, which was be synchronized locally by the team
 - Record metadata is curated as follows:
 
-  - Data retrieved in the search is stored in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search) directory; the [Git history of this path](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search) shows that the files were preserved in their original form, i.e., treated as raw data
-  - Records were imported into the [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib) as the primary data structure; the [Git history of this file](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib) documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)
+  - Data retrieved in the search is stored in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory; the [Git history of this path](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search){target=_blank} shows that the files were preserved in their original form, i.e., treated as raw data
+  - Records were imported into the [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib){target=_blank} as the primary data structure; the [Git history of this file](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib){target=_blank} documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)
 
 - For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev. BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.
 
@@ -46,9 +46,9 @@ At the moment, it will be kept separately to allow for forced-push updaes.
 
 ## Search
 
-- The search strategy is stored together with the raw data files [here](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search), in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
-- Open-access API-searches (licensing issues permit publication of raw data exported from databases like WOS or EBSCO)
-- We reused samples from prior reviews by @WagnerPresterPare2021 ([data/search/WagnerPresterPare2021_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json)) and @Fiers2023 ([data/search/Fiers2023_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json)) 
+- The search strategy is stored together with the raw data files [here](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank}, in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
+- Open-access API-searches (licensing issues permit publication of raw data exported from databases like WOS or EBSCO).
+- We reused samples from prior reviews by @WagnerPresterPare2021 ([data/search/WagnerPresterPare2021_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json){target=_blank} and [WagnerPresterPare2021.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib){target=_blank}) and @Fiers2023 ([data/search/Fiers2023_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json){target=_blank} and [Fiers2023.csv](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv){target=_blank}).
 
 ::: {.callout-note text="TODO"}
 - Search-query was used to validate syntactic correctness and ...
@@ -57,8 +57,8 @@ At the moment, it will be kept separately to allow for forced-push updaes.
 
 ## Dedupe
 
-- Preparation was done using CoLRev and extensions (see [prep commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c)).
-- Deduplication was done using BibDedupe. Deduplication changes are in [dedupe commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c).
+- Preparation was done using CoLRev and extensions (see [prep commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c){target=_blank}).
+- Deduplication was done using BibDedupe. Deduplication changes are in [dedupe commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c){target=_blank}.
 
 ::: {.callout-note text="TODO"}
 Dedupe changes were validated using the max-diff strategy (`colrev validate XXXX`).
@@ -71,7 +71,7 @@ Preparation changes were validated using the max-diff strategy (`colrev validate
 
 ::: {.callout-note text="TODO"}
 
-- For prescreening, we tested the new [llm-prescreener](temp_file.txt) in [ref](temp_file.txt). Comparison with prescreening decisions of GW showed low reliability with the llm-prescreener (command + kappa). Results were therefore reverted ([ref](temp_file.txt)) and a fully manual prescreen was implemented.
+- For prescreening, we tested the new [llm-prescreener](temp_file.txt){target=_blank} in [ref](temp_file.txt){target=_blank}. Comparison with prescreening decisions of GW showed low reliability with the llm-prescreener (command + kappa). Results were therefore reverted ([ref](temp_file.txt)) and a fully manual prescreen was implemented.
 
 Note: this could also be done in a separate branch, or the changes could be undone using a hard git reset.
 
@@ -82,10 +82,10 @@ Note: this could also be done in a separate branch, or the changes could be undo
 
 - For data extraction, four scenarios were considered:
 
-  - A purely narrative review (the synthesis is written in [this](temp_file.txt) document)
-  - A bibliometric analysis (the citation network is [here](temp_file.txt))
-  - An emergent mapping study (the notes are [here](temp_file.txt) and illustrated [here](temp_file.txt))
-  - A structured extraction of evidence (a preliminary coding scheme is [here](temp_file.txt) and the pilot coding [here](temp_file.txt))
+  - A purely narrative review (the synthesis is written in [this](temp_file.txt){target=_blank} document).
+  - A bibliometric analysis (the citation network is [here](temp_file.txt){target=_blank}).
+  - An emergent mapping study (the notes are [here](temp_file.txt) and illustrated [here](temp_file.txt){target=_blank}).
+  - A structured extraction of evidence (a preliminary coding scheme is [here](temp_file.txt){target=_blank} and the pilot coding [here](temp_file.txt){target=_blank}).
 
 ![Data structures](figures/data_structures.png)
 
@@ -100,4 +100,4 @@ Note: this could also be done in a separate branch, or the changes could be undo
 
 - The current status of the project is automatically updated with every change and reflected in the PRISMA chart [@PageMcKenzieBossuytEtAl2021]:
 
-![PRISMA Flow Chart (generated by [python-prisma](temp_file.txt))](prisma.png)
+![PRISMA Flow Chart (generated by [python-prisma](temp_file.txt){target=_blank})](prisma.png)
