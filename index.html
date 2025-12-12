@@ -70,6 +70,8 @@ div.csl-indent {
 <meta name="citation_reference" content="citation_title=Exploring the boundaries and processes of digital platforms for knowledge work: A review of information systems research;,citation_author=Gerit Wagner;,citation_author=Julian Prester;,citation_author=Guy Paré;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_issue=4;,citation_doi=10.1016/j.jsis.2021.101694;,citation_volume=30;,citation_journal_title=The Journal of Strategic Information Systems;">
 <meta name="citation_reference" content="citation_title=Inequality and discrimination in the online labor market: A scoping review;,citation_author=Fien Fiers;,citation_publication_date=2023;,citation_cover_date=2023;,citation_year=2023;,citation_issue=12;,citation_doi=10.1177/14614448221128379;,citation_volume=25;,citation_journal_title=New Media &amp;amp;amp; Society;">
 <meta name="citation_reference" content="citation_title=The PRISMA 2020 statement: An updated guideline for reporting systematic reviews;,citation_author=Matthew J. Page;,citation_author=Joanne E. McKenzie;,citation_author=Patrick M. Bossuyt;,citation_author=Isabelle Boutron;,citation_author=Tammy C. Hoffmann;,citation_author=Cynthia D. Mulrow;,citation_author=Larissa Shamseer;,citation_author=Jennifer M. Tetzlaff;,citation_author=Elie A. Akl;,citation_author=Sue E. Brennan;,citation_author=Roger Chou;,citation_author=Julie Glanville;,citation_author=Jeremy M. Grimshaw;,citation_author=Asbjørn Hróbjartsson;,citation_author=Manoj M. Lalu;,citation_author=Tianjing Li;,citation_author=Elizabeth W. Loder;,citation_author=Evan Mayo-Wilson;,citation_author=Steve McDonald;,citation_author=Luke A. McGuinness;,citation_author=Lesley A. Stewart;,citation_author=James Thomas;,citation_author=Andrea C. Tricco;,citation_author=Vivian A. Welch;,citation_author=Penny Whiting;,citation_author=David Moher;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_fulltext_html_url=https://systematicreviewsjournal.biomedcentral.com/articles/10.1186/s13643-021-01626-4;,citation_issue=1;,citation_doi=10.1186/S13643-021-01626-4;,citation_volume=10;,citation_journal_title=Systematic Reviews;">
+<meta name="citation_reference" content="citation_title=BibDedupe: An open-source python library for bibliographic record deduplication;,citation_abstract=BibDedupe is a Python library developed for bibliographic record deduplication in meta-analysis and research synthesis. It is constructed with a focus on four requirements: (1) Zero false positives: The primary objective is to prevent incorrectly merging distinct entries. This focus on zero false positives is crucial to ensure trustworthiness and prevent biased conclusions in the analysis. (2) Reproducibility: BibDedupe implements fixed rules to produce consistent results, in line with the scientific standard of reproducibility. (3) Efficiency: The library is also tuned for low false-negative rates and rapid processing, to ensure scalability of the duplicate identification process. (4) Continuous evaluation and improvement: It is continuously evaluated on over 160,000 records from 10 datasets to ensure its effectiveness, especially in follow-up refinements. Unlike general-purpose deduplication tools, BibDedupe is specifically designed for the unique requirements of bibliographic data in meta-analysis and research synthesis. In this context, BibDedupe aims to provide a Python library that improves the effectiveness and efficiency of duplicate identification, potentially benefitting review papers across scientific disciplines.;,citation_author=Gerit Wagner;,citation_publication_date=2024;,citation_cover_date=2024;,citation_year=2024;,citation_fulltext_html_url=https://joss.theoj.org/papers/10.21105/joss.06318;,citation_issue=97;,citation_doi=10.21105/JOSS.06318;,citation_volume=9;,citation_journal_title=Journal of Open Source Software;">
+<meta name="citation_reference" content="citation_title=CoLRev: An open-source environment for collaborative reviews;,citation_author=Gerit Wagner;,citation_author=Julian Prester;,citation_publication_date=2025;,citation_cover_date=2025;,citation_year=2025;,citation_fulltext_html_url=https://github.com/CoLRev-Environment/colrev;">
 </head>
 
 <body class="quarto-light">
@@ -170,9 +172,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The data repository (colrev project) is currently stored separately: <a href="https://github.com/fs-ise/C5-DM-vignette" target="_blank">fs-ise/C5-DM-vignette</a>.</p>
-<p>Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet.</p>
-<p>At the moment, it will be kept separately to allow for forced-push updaes.</p>
+<p>The data repository (colrev project) is currently stored separately: <a href="https://github.com/fs-ise/C5-DM-vignette" target="_blank">fs-ise/C5-DM-vignette</a>. Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet (it should be available in the <code>data/data/paper.md</code>). At the moment, it will be kept separately to allow for forced-push updaes.</p>
 <p><strong>TODO</strong>:</p>
 <ul>
 <li>Update links in this document</li>
@@ -182,84 +182,112 @@ Important
 </div>
 <section id="plan" class="level2">
 <h2 class="anchored" data-anchor-id="plan">Plan</h2>
-<ul>
-<li><p>The review is conducted using a <a href="https://github.com/fs-ise/C5-DM-vignette" target="_blank">shared GitHub repository</a>, which was be synchronized locally by the team</p></li>
-<li><p>Record metadata is curated as follows:</p>
+<p>The review is conducted using a <a href="https://github.com/fs-ise/C5-DM-vignette" target="_blank">shared GitHub repository</a>, which was be synchronized locally by the team</p>
+<p>Record metadata is curated as follows:</p>
 <ul>
 <li>Data retrieved in the search is stored in the <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search" target="_blank">data/search</a> directory; the <a href="https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search" target="_blank">Git history of this path</a> shows that the files were preserved in their original form, i.e., treated as raw data</li>
 <li>Records were imported into the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib" target="_blank">data/records.bib</a> as the primary data structure; the <a href="https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib" target="_blank">Git history of this file</a> documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)</li>
-</ul></li>
-<li><p>For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev. BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.</p></li>
 </ul>
+<p>For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev <span class="citation" data-cites="WagnerPrester2025">(<a href="#ref-WagnerPrester2025" role="doc-biblioref">Wagner and Prester 2025</a>)</span>. BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Explanation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Data was structured as follows:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="figures/recommendation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Data structures"><img src="figures/recommendation.png" class="img-fluid figure-img" alt="Data structures"></a></p>
 <figcaption>Data structures</figcaption>
 </figure>
 </div>
+</div>
+</div>
+</div>
 </section>
 <section id="search" class="level2">
 <h2 class="anchored" data-anchor-id="search">Search</h2>
+<p>The search strategie are stored in JSON format together with the raw data files in the <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search" target="_blank">data/search</a> directory, in line with the standard of <span class="citation" data-cites="HaddawayRethlefsenDaviesEtAl2022">Haddaway et al. (<a href="#ref-HaddawayRethlefsenDaviesEtAl2022" role="doc-biblioref">2022</a>)</span>. For the illustration, we relied on open-access API-searches, because licensing issues permit publication of raw data exported from databases like WOS or EBSCO.</p>
+<p>We reused samples from prior reviews by <span class="citation" data-cites="WagnerPresterPare2021">Wagner, Prester, and Paré (<a href="#ref-WagnerPresterPare2021" role="doc-biblioref">2021</a>)</span>:</p>
 <ul>
-<li>The search strategy is stored together with the raw data files <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search" target="_blank">here</a>, in line with the standard of <span class="citation" data-cites="HaddawayRethlefsenDaviesEtAl2022">Haddaway et al. (<a href="#ref-HaddawayRethlefsenDaviesEtAl2022" role="doc-biblioref">2022</a>)</span>.</li>
-<li>Open-access API-searches (licensing issues permit publication of raw data exported from databases like WOS or EBSCO).</li>
-<li>We reused samples from prior reviews by <span class="citation" data-cites="WagnerPresterPare2021">Wagner, Prester, and Paré (<a href="#ref-WagnerPresterPare2021" role="doc-biblioref">2021</a>)</span> (<a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json" target="_blank">data/search/WagnerPresterPare2021_search_history.json</a> and <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib" target="_blank">WagnerPresterPare2021.bib</a>) and <span class="citation" data-cites="Fiers2023">Fiers (<a href="#ref-Fiers2023" role="doc-biblioref">2023</a>)</span> (<a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json" target="_blank">data/search/Fiers2023_search_history.json</a> and <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv" target="_blank">Fiers2023.csv</a>).</li>
+<li><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json" target="_blank">data/search/WagnerPresterPare2021_search_history.json</a> and</li>
+<li><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib" target="_blank">WagnerPresterPare2021.bib</a></li>
 </ul>
-<div class="callout callout-style-default callout-note callout-titled" data-text="TODO">
-<div class="callout-header d-flex align-content-center">
+<p>and <span class="citation" data-cites="Fiers2023">Fiers (<a href="#ref-Fiers2023" role="doc-biblioref">2023</a>)</span>:</p>
+<ul>
+<li><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json" target="_blank">data/search/Fiers2023_search_history.json</a> and</li>
+<li><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv" target="_blank">Fiers2023.csv</a>.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="TODO">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>TODO
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
+<li>Include a table overview with search strategy / search results?</li>
 <li>Search-query was used to validate syntactic correctness and …</li>
 <li>scope (????)</li>
 </ul>
 </div>
 </div>
+</div>
 </section>
 <section id="dedupe" class="level2">
 <h2 class="anchored" data-anchor-id="dedupe">Dedupe</h2>
-<ul>
-<li>Preparation was done using CoLRev and extensions (see <a href="https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c" target="_blank">prep commit</a>).</li>
-<li>Deduplication was done using BibDedupe. Deduplication changes are in <a href="https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c" target="_blank">dedupe commit</a>.</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled" data-text="TODO">
-<div class="callout-header d-flex align-content-center">
+<p>Preparation was done using CoLRev and extensions (see <a href="https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c" target="_blank">prep commit</a>).</p>
+<p>Deduplication was done using BibDedupe <span class="citation" data-cites="Wagner2024">(<a href="#ref-Wagner2024" role="doc-biblioref">Wagner 2024</a>)</span>. Deduplication changes are in <a href="https://github.com/fs-ise/C5-DM-vignette/commit/c22178d10fb90954d681f428fc5b08c72b5e6d48" target="_blank">dedupe commit</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="TODO">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>TODO
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Dedupe changes were validated using the max-diff strategy (<code>colrev validate XXXX</code>). Preparation changes were validated using the max-diff strategy (<code>colrev validate XXXX</code>).</p>
+</div>
 </div>
 </div>
 </section>
 <section id="prescreen" class="level2">
 <h2 class="anchored" data-anchor-id="prescreen">Prescreen</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="TODO">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>TODO
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Replace this figure:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="figures/illustration-lr-transparency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Data structures"><img src="figures/illustration-lr-transparency.png" class="img-fluid figure-img" alt="Data structures"></a></p>
 <figcaption>Data structures</figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" data-text="TODO">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
 <ul>
 <li>For prescreening, we tested the new <a href="temp_file.txt" target="_blank">llm-prescreener</a> in <a href="temp_file.txt" target="_blank">ref</a>. Comparison with prescreening decisions of GW showed low reliability with the llm-prescreener (command + kappa). Results were therefore reverted (<a href="temp_file.txt">ref</a>) and a fully manual prescreen was implemented.</li>
 </ul>
@@ -269,41 +297,48 @@ Note
 </ul>
 </div>
 </div>
+</div>
 </section>
 <section id="data-extraction" class="level2">
 <h2 class="anchored" data-anchor-id="data-extraction">Data extraction</h2>
+<p>For data extraction, four scenarios were considered:</p>
 <ul>
-<li><p>For data extraction, four scenarios were considered:</p>
-<ul>
-<li>A purely narrative review (the synthesis is written in <a href="temp_file.txt" target="_blank">this</a> document).</li>
-<li>A bibliometric analysis (the citation network is <a href="temp_file.txt" target="_blank">here</a>).</li>
-<li>An emergent mapping study (the notes are <a href="temp_file.txt">here</a> and illustrated <a href="temp_file.txt" target="_blank">here</a>).</li>
-<li>A structured extraction of evidence (a preliminary coding scheme is <a href="temp_file.txt" target="_blank">here</a> and the pilot coding <a href="temp_file.txt" target="_blank">here</a>).</li>
-</ul></li>
+<li>A bibliometric analysis (the citation network is <a href="temp_file.txt" target="_blank">TODO</a>).</li>
+<li>An emergent mapping study (the notes are <a href="temp_file.txt">TODO</a> and illustrated <a href="temp_file.txt" target="_blank">here</a>).</li>
+<li>A structured extraction of evidence (a preliminary coding scheme is <a href="temp_file.txt" target="_blank">TODO</a> and the pilot coding <a href="temp_file.txt" target="_blank">TODO</a>).</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Explanation">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Explanation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In line with recommendation XY, data structures range from unstructured to structured; they should be aligned with the type of review.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="figures/data_structures.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Data structures"><img src="figures/data_structures.png" class="img-fluid figure-img" alt="Data structures"></a></p>
 <figcaption>Data structures</figcaption>
 </figure>
 </div>
+</div>
+</div>
+</div>
 </section>
 <section id="synthesis" class="level2">
 <h2 class="anchored" data-anchor-id="synthesis">Synthesis</h2>
-<ul>
-<li><p>The narrative synthesis is in <a href="temp_file.txt">this</a> document in Markdown format, allowing for larger teams to work on the same document (similar to <em>cite-covid-review</em>)</p></li>
-<li><p>To make the review reusable, we added the <a href="temp_file.txt">XY</a> license (indexing in SYNERGY, SearchRXiv is planned once the review progresses beyond the <em>illustration</em> stages)</p></li>
-<li><p>We reused prior reviews as follows:</p>
-<ul>
-<li>The search strategy of XY were considered in the design of the database searches</li>
-<li>The sample of XY was imported as part of the search.</li>
-</ul></li>
-<li><p>The current status of the project is automatically updated with every change and reflected in the PRISMA chart <span class="citation" data-cites="PageMcKenzieBossuytEtAl2021">(<a href="#ref-PageMcKenzieBossuytEtAl2021" role="doc-biblioref">Page et al. 2021</a>)</span>:</p></li>
-</ul>
+<p>The narrative synthesis is in the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md" target="_blank">data/data/paper.md</a> document in Markdown format, allowing for larger teams to work on the same document (similar to <em>cite-covid-review</em>)</p>
+<p>To make the review reusable, we added the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/LICENSE.txt">CC BY 4.0</a> license (indexing in SYNERGY, SearchRXiv is planned once the review progresses beyond the <em>illustration</em> stages)</p>
+<p>The current status of the project is automatically updated with every change and reflected in the PRISMA chart <span class="citation" data-cites="PageMcKenzieBossuytEtAl2021">(<a href="#ref-PageMcKenzieBossuytEtAl2021" role="doc-biblioref">Page et al. 2021</a>)</span>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="prisma.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="PRISMA Flow Chart (generated by python-prisma)"><img src="prisma.png" class="img-fluid figure-img" alt="PRISMA Flow Chart (generated by python-prisma)"></a></p>
-<figcaption>PRISMA Flow Chart (generated by <a href="temp_file.txt" target="_blank">python-prisma</a>)</figcaption>
+<p><a href="prisma.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="PRISMA Flow Chart (generated by python-prisma (TODO))"><img src="prisma.png" class="img-fluid figure-img" alt="PRISMA Flow Chart (generated by python-prisma (TODO))"></a></p>
+<figcaption>PRISMA Flow Chart (generated by <a href="temp_file.txt" target="_blank">python-prisma (TODO)</a>)</figcaption>
 </figure>
 </div>
 
@@ -318,6 +353,12 @@ Haddaway, Neal R., Melissa L. Rethlefsen, Melinda Davies, Julie Glanville, Betha
 </div>
 <div id="ref-PageMcKenzieBossuytEtAl2021" class="csl-entry" role="listitem">
 Page, Matthew J., Joanne E. McKenzie, Patrick M. Bossuyt, Isabelle Boutron, Tammy C. Hoffmann, Cynthia D. Mulrow, Larissa Shamseer, et al. 2021. <span>“The PRISMA 2020 Statement: An Updated Guideline for Reporting Systematic Reviews.”</span> <em>Systematic Reviews</em> 10 (1). <a href="https://doi.org/10.1186/S13643-021-01626-4">https://doi.org/10.1186/S13643-021-01626-4</a>.
+</div>
+<div id="ref-Wagner2024" class="csl-entry" role="listitem">
+Wagner, Gerit. 2024. <span>“BibDedupe: An Open-Source Python Library for Bibliographic Record Deduplication.”</span> <em>Journal of Open Source Software</em> 9 (97): 6318. <a href="https://doi.org/10.21105/JOSS.06318">https://doi.org/10.21105/JOSS.06318</a>.
+</div>
+<div id="ref-WagnerPrester2025" class="csl-entry" role="listitem">
+Wagner, Gerit, and Julian Prester. 2025. <span>“CoLRev: An Open-Source Environment for Collaborative Reviews.”</span> <a href="https://github.com/CoLRev-Environment/colrev">https://github.com/CoLRev-Environment/colrev</a>.
 </div>
 <div id="ref-WagnerPresterPare2021" class="csl-entry" role="listitem">
 Wagner, Gerit, Julian Prester, and Guy Paré. 2021. <span>“Exploring the Boundaries and Processes of Digital Platforms for Knowledge Work: A Review of Information Systems Research.”</span> <em>The Journal of Strategic Information Systems</em> 30 (4): 101694. <a href="https://doi.org/10.1016/j.jsis.2021.101694">https://doi.org/10.1016/j.jsis.2021.101694</a>.
