@@ -148,7 +148,6 @@ div.csl-indent {
   <li><a href="#prescreen" id="toc-prescreen" class="nav-link" data-scroll-target="#prescreen">Prescreen</a></li>
   <li><a href="#data-extraction" id="toc-data-extraction" class="nav-link" data-scroll-target="#data-extraction">Data extraction</a></li>
   <li><a href="#synthesis" id="toc-synthesis" class="nav-link" data-scroll-target="#synthesis">Synthesis</a></li>
-  <li><a href="#repository" id="toc-repository" class="nav-link" data-scroll-target="#repository">Repository</a></li>
   </ul>
 </nav>
 </div>
@@ -174,23 +173,10 @@ Important
 <p>The data repository (colrev project) is currently stored separately: <a href="https://github.com/fs-ise/C5-DM-vignette">fs-ise/C5-DM-vignette</a>.</p>
 <p>Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet.</p>
 <p>At the moment, it will be kept separately to allow for forced-push updaes.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled" data-text="Plan">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<p><strong>TODO</strong>:</p>
 <ul>
-<li>Publish as Quarto website</li>
 <li>Update links in this document</li>
 <li>Include vignette (screenshot?) in the paper</li>
-<li>Share with JP</li>
 </ul>
 </div>
 </div>
@@ -200,8 +186,8 @@ Note
 <li><p>The review is conducted using a <a href="https://github.com/fs-ise/C5-DM-vignette">shared GitHub repository</a>, which was be synchronized locally by the team</p></li>
 <li><p>Record metadata is curated as follows:</p>
 <ul>
-<li>Data retrieved in the search is stored in the <a href="temp_file.txt">data/raw</a> directory; the <a href="temp_file.txt">Git history of this path</a> shows that the files were preserved in their original form, i.e., treated as raw data</li>
-<li>Records were imported into the <a href="temp_file.txt">data/records.bib</a> as the primary data structure; the <a href="temp_file.txt">Git history of this file</a> documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)</li>
+<li>Data retrieved in the search is stored in the <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search">data/search</a> directory; the <a href="https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search">Git history of this path</a> shows that the files were preserved in their original form, i.e., treated as raw data</li>
+<li>Records were imported into the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib">data/records.bib</a> as the primary data structure; the <a href="https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib">Git history of this file</a> documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)</li>
 </ul></li>
 <li><p>For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev. BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.</p></li>
 </ul>
@@ -215,9 +201,9 @@ Note
 <section id="search" class="level2">
 <h2 class="anchored" data-anchor-id="search">Search</h2>
 <ul>
-<li>The search strategy is stored together with the raw data files <a href="temp_file.txt">here</a>, in line with the standard of <span class="citation" data-cites="HaddawayRethlefsenDaviesEtAl2022">Haddaway et al. (<a href="#ref-HaddawayRethlefsenDaviesEtAl2022" role="doc-biblioref">2022</a>)</span>.</li>
+<li>The search strategy is stored together with the raw data files <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search">here</a>, in line with the standard of <span class="citation" data-cites="HaddawayRethlefsenDaviesEtAl2022">Haddaway et al. (<a href="#ref-HaddawayRethlefsenDaviesEtAl2022" role="doc-biblioref">2022</a>)</span>.</li>
 <li>Open-access API-searches (licensing issues permit publication of raw data exported from databases like WOS or EBSCO)</li>
-<li>We reused samples from prior reviews <span class="citation" data-cites="WagnerPresterPare2021 Fiers2023">(<a href="#ref-WagnerPresterPare2021" role="doc-biblioref">Wagner, Prester, and Paré 2021</a>; <a href="#ref-Fiers2023" role="doc-biblioref">Fiers 2023</a>)</span>: <a href="temp_file.txt">hrere</a></li>
+<li>We reused samples from prior reviews by <span class="citation" data-cites="WagnerPresterPare2021">Wagner, Prester, and Paré (<a href="#ref-WagnerPresterPare2021" role="doc-biblioref">2021</a>)</span> (<a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json">data/search/WagnerPresterPare2021_search_history.json</a>) and <span class="citation" data-cites="Fiers2023">Fiers (<a href="#ref-Fiers2023" role="doc-biblioref">2023</a>)</span> (<a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json">data/search/Fiers2023_search_history.json</a>)</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled" data-text="TODO">
 <div class="callout-header d-flex align-content-center">
@@ -320,12 +306,6 @@ Note
 <figcaption>PRISMA Flow Chart (generated by <a href="temp_file.txt">python-prisma</a>)</figcaption>
 </figure>
 </div>
-</section>
-<section id="repository" class="level2">
-<h2 class="anchored" data-anchor-id="repository">Repository</h2>
-<ul>
-<li><a href="https://github.com/digital-work-lab/project-name">GitHub Repository</a></li>
-</ul>
 
 </section>
 
