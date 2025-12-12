@@ -19,11 +19,19 @@ authors:
 bibliography: references.bib
 ---
 
+::: {.callout-important}
+The data repository (colrev project) is currently stored separately: [fs-ise/C5-DM-vignette](https://github.com/fs-ise/C5-DM-vignette).
+
+Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet.
+
+At the moment, it will be kept separately to allow for forced-push updaes.
+:::
+
 ::: {.callout-note text="Plan"}
-- Create colrev repository in parallel
-- Add this manuscript vignette at the end
-- Push to [C5-DM-vignette](https://github.com/fs-ise/C5-DM-vignette)
+- Publish as Quarto website
 - Update links in this document
+- Include vignette (screenshot?) in the paper
+- Share with JP
 :::
 
 ## Plan
