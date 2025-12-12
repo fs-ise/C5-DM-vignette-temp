@@ -54,7 +54,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-3eb01a01a635a2b605c08606a7fa965c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-913264a4cb96c77aa34fa14fbf33161a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -214,17 +214,57 @@ Important
 </section>
 <section id="search" class="level2">
 <h2 class="anchored" data-anchor-id="search">Search</h2>
-<p>The search strategie are stored in JSON format together with the raw data files in the <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search" target="_blank">data/search</a> directory, in line with the standard of <span class="citation" data-cites="HaddawayRethlefsenDaviesEtAl2022">Haddaway et al. (<a href="#ref-HaddawayRethlefsenDaviesEtAl2022" role="doc-biblioref">2022</a>)</span>. For the illustration, we relied on open-access API-searches, because licensing issues permit publication of raw data exported from databases like WOS or EBSCO.</p>
-<p>We reused samples from prior reviews by <span class="citation" data-cites="WagnerPresterPare2021">Wagner, Prester, and Paré (<a href="#ref-WagnerPresterPare2021" role="doc-biblioref">2021</a>)</span>:</p>
-<ul>
-<li><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json" target="_blank">data/search/WagnerPresterPare2021_search_history.json</a> and</li>
-<li><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib" target="_blank">WagnerPresterPare2021.bib</a></li>
-</ul>
-<p>and <span class="citation" data-cites="Fiers2023">Fiers (<a href="#ref-Fiers2023" role="doc-biblioref">2023</a>)</span>:</p>
-<ul>
-<li><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json" target="_blank">data/search/Fiers2023_search_history.json</a> and</li>
-<li><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv" target="_blank">Fiers2023.csv</a>.</li>
-</ul>
+<p>The search strategie are stored in JSON format together with the raw data files in the <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search" target="_blank">data/search</a> directory, in line with the standard of <span class="citation" data-cites="HaddawayRethlefsenDaviesEtAl2022">Haddaway et al. (<a href="#ref-HaddawayRethlefsenDaviesEtAl2022" role="doc-biblioref">2022</a>)</span>. For the illustration, we relied on open-access API-searches, because licensing issues permit publication of raw data exported from databases like WOS or EBSCO. We also reused samples from prior reviews, as outlined in <a href="#tbl-searches" class="quarto-xref">Table&nbsp;1</a>.</p>
+<div id="tbl-searches" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-searches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Overview of search strategies and results.
+</figcaption>
+<div aria-describedby="tbl-searches-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Search Strategy</th>
+<th style="text-align: left;">Search Results</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="citation" data-cites="WagnerPresterPare2021">Wagner, Prester, and Paré (<a href="#ref-WagnerPresterPare2021" role="doc-biblioref">2021</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json">WagnerPresterPare2021_search_history.json</a></td>
+<td style="text-align: left;"><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib">WagnerPresterPare2021.bib</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="citation" data-cites="Fiers2023">Fiers (<a href="#ref-Fiers2023" role="doc-biblioref">2023</a>)</span></td>
+<td style="text-align: left;"><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json">Fiers2023_search_history.json</a></td>
+<td style="text-align: left;"><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv">Fiers2023.csv</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Crossref (API search)</td>
+<td style="text-align: left;"><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref_search_history.json">crossref_search_history.json</a></td>
+<td style="text-align: left;"><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref.bib">crossref.bib</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DBLP (API search)</td>
+<td style="text-align: left;"><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp_search_history.json">dblp_search_history.json</a></td>
+<td style="text-align: left;"><a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp.bib">dblp.bib</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<!--
+
+- [data/search/WagnerPresterPare2021_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json){target=_blank} and
+- [WagnerPresterPare2021.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib){target=_blank}
+
+and @Fiers2023:
+
+- [data/search/Fiers2023_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json){target=_blank} and
+- [Fiers2023.csv](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv){target=_blank}.
+-->
 <div class="callout callout-style-default callout-note callout-titled" title="TODO">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -238,7 +278,6 @@ Important
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ul>
-<li>Include a table overview with search strategy / search results?</li>
 <li>Search-query was used to validate syntactic correctness and …</li>
 <li>scope (????)</li>
 </ul>
