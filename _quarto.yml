@@ -5,7 +5,9 @@ manuscript:
   article: index.qmd
 
 format:
-  html: default
+  html:
+    grid:
+      body-width: 900px
   # docx: default
   # pdf: default
 

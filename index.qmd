@@ -54,8 +54,21 @@ Data was structured as follows:
 
 The search strategie are stored in JSON format together with the raw data files in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory, in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
 For the illustration, we relied on open-access API-searches, because licensing issues permit publication of raw data exported from databases like WOS or EBSCO.
+We also reused samples from prior reviews, as outlined in @tbl-searches.
 
-We reused samples from prior reviews by @WagnerPresterPare2021:
+::: {#tbl-searches}
+Table: Overview of search strategies and results.
+
+| Source | Search Strategy | Search Results |
+|:--------|:-----------------|:----------------|
+| @WagnerPresterPare2021 | [WagnerPresterPare2021_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json) | [WagnerPresterPare2021.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib) |
+| @Fiers2023 | [Fiers2023_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json) | [Fiers2023.csv](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv) |
+| Crossref (API search) | [crossref_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref_search_history.json) | [crossref.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref.bib) |
+| DBLP (API search) | [dblp_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp_search_history.json) | [dblp.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp.bib) |
+
+:::
+
+<!--
 
 - [data/search/WagnerPresterPare2021_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json){target=_blank} and
 - [WagnerPresterPare2021.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib){target=_blank}
@@ -64,9 +77,9 @@ and @Fiers2023:
 
 - [data/search/Fiers2023_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json){target=_blank} and
 - [Fiers2023.csv](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv){target=_blank}.
+-->
 
 ::: {.callout-note title="TODO" collapse=true}
-- Include a table overview with search strategy / search results?
 - Search-query was used to validate syntactic correctness and ...
 - scope (????)
 :::
