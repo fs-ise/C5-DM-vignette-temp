@@ -42,7 +42,13 @@ Record metadata is curated as follows:
 For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev [@WagnerPrester2025].
 BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.
 
+
+::: {.callout-note title="Explanation" collapse=true}
+
+Data was structured as follows:
+
 ![Data structures](figures/recommendation.png)
+:::
 
 ## Search
 
@@ -99,7 +105,13 @@ For data extraction, four scenarios were considered:
 - An emergent mapping study (the notes are [TODO](temp_file.txt) and illustrated [here](temp_file.txt){target=_blank}).
 - A structured extraction of evidence (a preliminary coding scheme is [TODO](temp_file.txt){target=_blank} and the pilot coding [TODO](temp_file.txt){target=_blank}).
 
+::: {.callout-note title="Explanation" collapse=true}
+
+In line with recommendation XY, data structures range from unstructured to structured; they should be aligned with the type of review.
+
 ![Data structures](figures/data_structures.png)
+
+:::
 
 ## Synthesis
 
