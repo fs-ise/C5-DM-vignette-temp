@@ -57,8 +57,8 @@ At the moment, it will be kept separately to allow for forced-push updaes.
 
 ## Dedupe
 
-- Preparation was done using CoLRev and extensions (see [prep commit](temp_file.txt)).
-- Deduplication was done using BibDedupe. Deduplication changes are in [dedupe commit](temp_file.txt).
+- Preparation was done using CoLRev and extensions (see [prep commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c)).
+- Deduplication was done using BibDedupe. Deduplication changes are in [dedupe commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c).
 
 ::: {.callout-note text="TODO"}
 Dedupe changes were validated using the max-diff strategy (`colrev validate XXXX`).
