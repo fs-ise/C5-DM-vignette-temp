@@ -1,0 +1,63 @@
+# ----------------------------
+# Quarto / rendering outputs
+# ----------------------------
+_site/
+_book/
+docs/              # if you render to docs/ for GitHub Pages (remove if you commit docs/)
+*.html
+*.pdf
+*.docx
+*.pptx
+*.epub
+
+# Quarto caches and intermediates
+.quarto/
+.quarto-cache/
+*_cache/
+*_files/
+
+# If you use Quarto projects with freeze
+_freeze/
+
+# ----------------------------
+# Knitr / R / Jupyter artifacts
+# ----------------------------
+.Rhistory
+.RData
+.Rproj.user/
+.Ruserdata
+renv/library/
+renv/python/
+renv/local/
+.Rprofile
+
+.ipynb_checkpoints/
+*.nb.html
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# ----------------------------
+# Logs / temp
+# ----------------------------
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# ----------------------------
+# IDEs
+# ----------------------------
+.vscode/
+.idea/
+*.swp
+
+.cache/
+.texlive2021/
+
+/.quarto/
+**/*.quarto_ipynb
