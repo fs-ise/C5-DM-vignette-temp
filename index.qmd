@@ -17,6 +17,10 @@ authors:
     affiliation: Department of Information Technologies, HEC Montréal
     corresponding: false
 bibliography: references.bib
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
 ---
 
 ::: {.callout-important}
@@ -32,16 +36,40 @@ At the moment, it will be kept separately to allow for forced-push updaes.
 
 ## Plan
 
-The review is conducted using a [shared GitHub repository](https://github.com/fs-ise/C5-DM-vignette){target=_blank}, which was be synchronized locally by the team
+The review is conducted using a [shared GitHub repository](https://github.com/fs-ise/C5-DM-vignette){target=_blank}, which was be synchronized locally by the team.
+<span style="display:inline-block;padding:.15rem .5rem;border-radius:999px;
+background:#eef;color:#224;font-size:.85em;">Curate</span>
+
+## Search
+
+We specified search strategies for the DBLP and Crossref application programming interfaces (APIs)[^1] using the core keyword *microsourcing* and a set of semantically related synonyms.
+We also reused samples from prior reviews [@WagnerPresterPare2021;@Fiers2023].
+The resulting query formulations were systematically tabulated to document the conceptual scope of the search and to enable consistent execution across data sources (see @tbl-searches).
+
+
+::: {#tbl-searches}
+Table: Overview of search strategies and results.
+
+| Source | Search strategy | Search results |
+|:--------|:-----------------|:----------------|
+| Crossref (API search) | [crossref_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref_search_history.json) | [crossref.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref.bib) |
+| DBLP (API search) | [dblp_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp_search_history.json) | [dblp.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp.bib) |
+| Prior review: @WagnerPresterPare2021 | [Wagner2021_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json) | [Wagner2021.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib) |
+| Prior review: @Fiers2023 | [Fiers2023_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json) | [Fiers2023.csv](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv) |
+
+:::
+
+The search strategie are stored in JSON format together with the raw data files in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory, in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
 
 Record metadata is curated as follows:
+<span style="display:inline-block;padding:.15rem .5rem;border-radius:999px;
+background:#eef;color:#224;font-size:.85em;">Curate</span>
 
 - Data retrieved in the search is stored in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory; the [Git history of this path](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search){target=_blank} shows that the files were preserved in their original form, i.e., treated as raw data
 - Records were imported into the [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib){target=_blank} as the primary data structure; the [Git history of this file](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib){target=_blank} documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)
 
 For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev [@WagnerPrester2025].
 BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.
-
 
 ::: {.callout-note title="Explanation" collapse=true}
 
@@ -50,35 +78,6 @@ Data was structured as follows:
 ![Data structures](figures/recommendation.png)
 :::
 
-## Search
-
-The search strategie are stored in JSON format together with the raw data files in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory, in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
-For the illustration, we relied on open-access API-searches, because licensing issues permit publication of raw data exported from databases like WOS or EBSCO.
-We also reused samples from prior reviews, as outlined in @tbl-searches.
-
-::: {#tbl-searches}
-Table: Overview of search strategies and results.
-
-| Source | Search Strategy | Search Results |
-|:--------|:-----------------|:----------------|
-| @WagnerPresterPare2021 | [WagnerPresterPare2021_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json) | [WagnerPresterPare2021.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib) |
-| @Fiers2023 | [Fiers2023_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json) | [Fiers2023.csv](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv) |
-| Crossref (API search) | [crossref_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref_search_history.json) | [crossref.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref.bib) |
-| DBLP (API search) | [dblp_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp_search_history.json) | [dblp.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp.bib) |
-
-:::
-
-<!--
-
-- [data/search/WagnerPresterPare2021_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json){target=_blank} and
-- [WagnerPresterPare2021.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib){target=_blank}
-
-and @Fiers2023:
-
-- [data/search/Fiers2023_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json){target=_blank} and
-- [Fiers2023.csv](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv){target=_blank}.
--->
-
 ::: {.callout-note title="TODO" collapse=true}
 - Search-query was used to validate syntactic correctness and ...
 - scope (????)
@@ -86,7 +85,7 @@ and @Fiers2023:
 
 ## Dedupe
 
-Preparation was done using CoLRev and extensions (see [prep commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c){target=_blank}).
+Metadta was prepared using CoLRev and extensions (see [prep commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c){target=_blank}).
 
 Deduplication was done using BibDedupe [@Wagner2024].
 Deduplication changes are in [dedupe commit](https://github.com/fs-ise/C5-DM-vignette/commit/c22178d10fb90954d681f428fc5b08c72b5e6d48){target=_blank}.
@@ -128,16 +127,26 @@ In line with recommendation XY, data structures range from unstructured to struc
 
 ## Synthesis
 
-The narrative synthesis is in the [data/data/paper.md](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md){target=_blank} document in Markdown format, allowing for larger teams to work on the same document (similar to *cite-covid-review*)
+The narrative synthesis is in the [paper docuemnt](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md){target=_blank} in Markdown format, allowing for larger teams to work on the same document (similar to the [covid19-review](https://github.com/greenelab/covid19-review)).
 
-To make the review reusable, we added the [CC BY 4.0](https://github.com/fs-ise/C5-DM-vignette/blob/main/LICENSE.txt) license (indexing in SYNERGY, SearchRXiv is planned once the review progresses beyond the *illustration* stages)
+To make the review reusable, we added the [CC BY 4.0](https://github.com/fs-ise/C5-DM-vignette/blob/main/LICENSE.txt) license[^2].
 
 The current status of the project is automatically updated with every change and reflected in the PRISMA chart [@PageMcKenzieBossuytEtAl2021]:
 
+```{python}
+#| label: fig-prisma
+#| fig-cap: "PRISMA Flow Chart (generated by [python-prisma (TODO)](link))"
+from py_prisma.py_prisma import plot_prisma_from_records
+
+plot_prisma_from_records(records_path="/home/gerit/ownCloud/action-office/LRDM/C5-DM-vignette/data/records.bib", show=True)
+
+```
+
 ::: {.callout-note title="TODO"}
-
-The prisma chart is currently a screenshot (needs to be updated):
-
-![PRISMA Flow Chart (generated by [python-prisma (TODO)](temp_file.txt){target=_blank})](prisma.png)
-
+The PRISMA chart is generated but needs to be tested properly.
 :::
+
+[^1]: For the illustration, we relied on open-access API-searches, because licensing issues do not allow for publication of raw data exported from databases like WOS or EBSCO.
+[^2]: Indexing in SYNERGY, SearchRXiv is planned once the review progresses beyond the *illustration* stages.
+
+# References
