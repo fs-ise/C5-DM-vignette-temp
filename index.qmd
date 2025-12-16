@@ -1,69 +1,139 @@
 ---
-title: "Microsourcing: A literature review (illustration)"
-authors:
-  - name: Gerit Wagner
-    affiliation: Otto-Friedrich-Universität Bamberg
-    corresponding: true
-
-  - name: Julian Prester
-    affiliation: The University of Sydney Business School, University of Sydney
-    corresponding: false
-
-  - name: Roman Lukyanenko
-    affiliation: McIntire School of Commerce, University of Virginia
-    corresponding: false
-
-  - name: Guy Paré
-    affiliation: Department of Information Technologies, HEC Montréal
-    corresponding: false
+title: "Biases in online labor markets: A systematic review"
+author: "Gerit Wagner, Julian Prester, Roman Lukyanenko, Guy Paré"
 bibliography: references.bib
 format:
   html:
     code-fold: true
     code-summary: "Show the code"
+    css: styles.css
+execute:
+  freeze: auto
 ---
 
-::: {.callout-important}
-The data repository (colrev project) is currently stored separately: [fs-ise/C5-DM-vignette](https://github.com/fs-ise/C5-DM-vignette){target=_blank}.
-Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet (it should be available in the `data/data/paper.md`).
-At the moment, it will be kept separately to allow for forced-push updaes.
+Building on the C5-DM framework for data management in literature reviews [@WagnerEtAl2026], this vignette illustrates how data management principles can be implemented in an literature review.
+The framework foregrounds data conceptualization, collection, curation, control, and consumption as foundational activities that shape the transparency, reliability, and reuse of literature review outcomes.
+The vignette is organized into two complementary parts.
+The middle column presents a systematic literature review following established reporting conventions.
+The right column explains how the manuscript is internally grounded in explicit data management decisions aligned with the C5-DM framework, adding an interactive layer of annotations that makes these decisions visible.
+The vignette thus serves as a concrete illustration of good data management practice in literature reviews—one that readers can follow directly in their own work while also sharpening their understanding of what to look for when evaluating other software solutions and data management approaches.
 
-**TODO**:
+::: aside
+::: {.callout-note title="5C-DM Framework"}
+This column explains how the prinicples of the framework are implemented. ⬇️
 
-- Update links in this document
-- Include vignette (screenshot?) in the paper
+<!-- Click on the buttons for an explanation. -->
+:::
 :::
 
 ## Plan
 
 The review is conducted using a [shared GitHub repository](https://github.com/fs-ise/C5-DM-vignette){target=_blank}, which was be synchronized locally by the team.
-<span style="display:inline-block;padding:.15rem .5rem;border-radius:999px;
-background:#eef;color:#224;font-size:.85em;">Curate</span>
+
+<!--
+simpler button:
+<a href="curate-info.html" target="_blank" rel="noopener noreferrer"
+   onclick="const w=window.open(this.href,'curatePopup','popup=yes,width=900,height=700');
+            if(w){ w.focus(); return false; }">
+  <span style="display:inline-block;padding:.18rem .55rem;border-radius:999px;box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.12); background:#fef3c7;color:#92400e;border:1px solid #fbbf24;font-size:.85em;font-weight:600;">
+    Curate
+  </span>
+</a>
+-->
+
+::: aside
+
+<a href="curate-info.html"
+   target="_blank" rel="noopener noreferrer"
+   aria-label="Open Curate info (opens in a popup window)"
+   style="text-decoration:none;"
+   onclick="const w=window.open(this.href,'curatePopup','popup=yes,width=900,height=700');
+            if(w){ w.focus(); return false; }">
+  <span
+    style="
+      display:inline-flex; align-items:center; gap:.35rem;
+      padding:.18rem .6rem;
+      border-radius:999px;
+      border:1px solid #fbbf24;
+      background:#fef3c7;
+      color:#92400e;
+      font-size:.85em;
+      font-weight:700;
+      cursor:pointer;
+      user-select:none;
+
+      box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.18);
+      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+    "
+    onmouseenter="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 2px 0 rgba(0,0,0,.05), 0 0 0 3px rgba(59,130,246,.32)'; this.style.filter='brightness(0.98)';"
+    onmouseleave="this.style.transform=''; this.style.boxShadow='0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.18)'; this.style.filter='';"
+  >
+    Curate: <span aria-hidden="true" style="font-size:1em; opacity:.85;">Storing data in a version-controlled folder. ↗</span>
+  </span>
+</a>
+
+
+:::
 
 ## Search
 
 We specified search strategies for the DBLP and Crossref application programming interfaces (APIs)[^1] using the core keyword *microsourcing* and a set of semantically related synonyms.
 We also reused samples from prior reviews [@WagnerPresterPare2021;@Fiers2023].
-The resulting query formulations were systematically tabulated to document the conceptual scope of the search and to enable consistent execution across data sources (see @tbl-searches).
+The resulting query formulations were systematically tabulated to document the conceptual scope of the search and to enable consistent execution across data sources (see @tbl-search-overview).
 
 
-::: {#tbl-searches}
-Table: Overview of search strategies and results.
+```{python}
+#| output: asis
+#| echo: false
 
-| Source | Search strategy | Search results |
-|:--------|:-----------------|:----------------|
-| Crossref (API search) | [crossref_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref_search_history.json) | [crossref.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/crossref.bib) |
-| DBLP (API search) | [dblp_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp_search_history.json) | [dblp.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/dblp.bib) |
-| Prior review: @WagnerPresterPare2021 | [Wagner2021_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021_search_history.json) | [Wagner2021.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/WagnerPresterPare2021.bib) |
-| Prior review: @Fiers2023 | [Fiers2023_search_history.json](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023_search_history.json) | [Fiers2023.csv](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/search/Fiers2023.csv) |
+import json
+from pathlib import Path
+from urllib.parse import quote
 
-:::
+SEARCH_DIR = Path("/home/gerit/ownCloud/action-office/LRDM/C5-DM-vignette/data/search")
+
+def md_link(text: str, target_path: str) -> str:
+    target_path_posix = Path(target_path).as_posix()
+    url = target_path_posix
+    return f"[{text}]({url})"
+
+
+json_files = sorted(SEARCH_DIR.glob("*.json"))
+
+rows = []
+for jf in json_files:
+    try:
+        data = json.loads(jf.read_text(encoding="utf-8"))
+    except Exception:
+        continue
+
+    label = (data.get("label") or jf.stem).strip()
+    results_path = (data.get("search_results_path") or "").strip()
+
+    # Render links in the same "data/search/..." style as in your manual table
+    json_link_target = f"data/search/{jf.name}"
+    search_strategy_cell = md_link(jf.name, json_link_target)
+
+    search_results_cell = (
+        md_link(Path(results_path).name, results_path)
+        if results_path
+        else ""
+    )
+
+    rows.append((label, search_strategy_cell, search_results_cell))
+
+print("::: {#tbl-search-overview}")
+print("Table: Overview of search strategies and results.\n")
+print("| Source | Search strategy | Search results |")
+print("|:--------|:-----------------|:----------------|")
+for s, strat, res in rows:
+  print(f"| {s} | {strat} | {res} |")
+print("\n:::")
+```
 
 The search strategie are stored in JSON format together with the raw data files in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory, in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
 
 Record metadata is curated as follows:
-<span style="display:inline-block;padding:.15rem .5rem;border-radius:999px;
-background:#eef;color:#224;font-size:.85em;">Curate</span>
 
 - Data retrieved in the search is stored in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory; the [Git history of this path](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search){target=_blank} shows that the files were preserved in their original form, i.e., treated as raw data
 - Records were imported into the [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib){target=_blank} as the primary data structure; the [Git history of this file](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib){target=_blank} documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)
@@ -71,7 +141,7 @@ background:#eef;color:#224;font-size:.85em;">Curate</span>
 For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev [@WagnerPrester2025].
 BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.
 
-::: {.callout-note title="Explanation" collapse=true}
+::: {.callout-note title="Explanation"  appearance="minimal" icon=false collapse=true}
 
 Data was structured as follows:
 
@@ -85,7 +155,7 @@ Data was structured as follows:
 
 ## Dedupe
 
-Metadta was prepared using CoLRev and extensions (see [prep commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c){target=_blank}).
+Metadata was prepared using CoLRev and extensions (see [prep commit](https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c){target=_blank}).
 
 Deduplication was done using BibDedupe [@Wagner2024].
 Deduplication changes are in [dedupe commit](https://github.com/fs-ise/C5-DM-vignette/commit/c22178d10fb90954d681f428fc5b08c72b5e6d48){target=_blank}.
@@ -96,6 +166,14 @@ Preparation changes were validated using the max-diff strategy (`colrev validate
 :::
 
 ## Prescreen
+
+::: {.callout-note title="Manual task"}
+**Trigger:** `records_deduped.bib` updated  
+**Responsible:** Two independent coders (GW anmd JP)  
+**Protocol:** PRISMA TA screening rules (see `protocol/screening.md`)  
+**Expected output:** `records_screened.bib`
+**History filter:** TODO (e.g., "prescreen" in commit title)
+:::
 
 ::: {.callout-note title="TODO" collapse=true}
 Replace this figure:
@@ -111,13 +189,25 @@ Note: this could also be done in a separate branch, or the changes could be undo
 
 ## Data extraction
 
-For data extraction, four scenarios were considered:
 
-- A bibliometric analysis (the citation network is [TODO](temp_file.txt){target=_blank}).
-- An emergent mapping study (the notes are [TODO](temp_file.txt) and illustrated [here](temp_file.txt){target=_blank}).
-- A structured extraction of evidence (a preliminary coding scheme is [TODO](temp_file.txt){target=_blank} and the pilot coding [TODO](temp_file.txt){target=_blank}).
+In line with the methodology of systematic reviews [**REFS**], we selected structured data forms to extract evidence from the studies (a preliminary coding scheme is [TODO](temp_file.txt){target=_blank} and the pilot coding [TODO](temp_file.txt){target=_blank}).
+Data is extracted [here](data).
 
-::: {.callout-note title="Explanation" collapse=true}
+::: {.callout-note title="Other review methodologies" collapse=true}
+
+For other review methodologies, different data extraction approaches must be considered.
+The following examples were added for illustration purposes:
+
+- Bibliometric data ([TODO](temp_file.txt){target=_blank}).
+- Emergent coding ([TODO](temp_file.txt){target=_blank}) in line with the recommendations of @GioiaEtAl2013 and the YAML workflow of @Wang2022.
+<!--
+https://aisel.aisnet.org/acis2022/17/
+https://blairwang.b-cdn.net/attachments/ACIS2022-YAML-Slides-rev02.pdf
+-->
+
+:::
+
+::: {.callout-note title="Explanation"  appearance="minimal" icon=false collapse=true}
 
 In line with recommendation XY, data structures range from unstructured to structured; they should be aligned with the type of review.
 
@@ -127,7 +217,7 @@ In line with recommendation XY, data structures range from unstructured to struc
 
 ## Synthesis
 
-The narrative synthesis is in the [paper docuemnt](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md){target=_blank} in Markdown format, allowing for larger teams to work on the same document (similar to the [covid19-review](https://github.com/greenelab/covid19-review)).
+The narrative synthesis is in the [paper document](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md){target=_blank} in Markdown format, allowing for larger teams to work on the same document (similar to the [covid19-review](https://github.com/greenelab/covid19-review)).
 
 To make the review reusable, we added the [CC BY 4.0](https://github.com/fs-ise/C5-DM-vignette/blob/main/LICENSE.txt) license[^2].
 
@@ -146,6 +236,192 @@ plot_prisma_from_records(records_path="/home/gerit/ownCloud/action-office/LRDM/C
 ::: {.callout-note title="TODO"}
 The PRISMA chart is generated but needs to be tested properly.
 :::
+
+@tbl-evidence provides summary of extracted evidence.
+
+
+```{python}
+#| label: tbl-evidence
+#| tbl-cap: "Table of evidence (generated from [TODO](link))"
+#| echo: true
+#| message: false
+#| warning: false
+
+from pathlib import Path
+import yaml
+import pandas as pd
+import matplotlib.pyplot as plt
+
+yaml_path = Path("data/evidence_platform_work_biases.yml")
+
+with yaml_path.open("r", encoding="utf-8") as f:
+    doc = yaml.safe_load(f)
+
+df = pd.DataFrame(doc.get("papers", []))
+
+cols = [
+    "study_id", "citation_key", "year", "platform", "platform_type",
+    "method", "data", "sample",
+    "bias_type", "bias_mechanism",
+    "outcome_affected", "evidence_level", "direction_of_bias",
+    "key_result", "notes",
+]
+df = df[[c for c in cols if c in df.columns]]
+
+df["year"] = pd.to_numeric(df.get("year"), errors="coerce").astype("Int64")
+df = df.sort_values(["bias_type", "evidence_level", "year"], na_position="last").reset_index(drop=True)
+
+compact_cols = [
+    "citation_key", "platform_type", "bias_type", "evidence_level",
+    "outcome_affected", "key_result"
+]
+df_compact = df[compact_cols].rename(columns={"citation_key": "study"})
+df_compact
+```
+
+@fig-aggregated-evidence aggregates the evidence.
+
+```{python}
+#| label: fig-aggregated-evidence
+#| fig-cap: "Aggregated evidence (generated from [TODO](link))"
+#| echo: true
+#| message: false
+#| warning: false
+
+weights = {
+    "weak": 1,
+    "moderate": 2,
+    "moderate_to_strong": 3,
+    "strong": 4
+}
+
+df_w = df.copy()
+df_w["evidence_weight"] = df_w["evidence_level"].map(weights).fillna(0)
+
+score = (
+    df_w.groupby("bias_type")["evidence_weight"]
+        .sum()
+        .sort_values(ascending=False)
+)
+
+ax = score.plot(kind="barh", figsize=(8, 3))
+ax.set_title("Weighted evidence score by bias type (higher = more/stronger evidence)")
+ax.set_xlabel("Bias type")
+ax.set_ylabel("Weighted score")
+plt.tight_layout()
+plt.show()
+
+```
+
+## Other review methodologies
+
+For other review methodologies, different data analysis approaches must be considered.
+The following examples were added for illustration purposes:
+
+- A bibliometric analysis:
+
+```{python}
+#| label: fig-citation-network
+#| fig-cap: "Citation network (generated from [TODO](link))"
+#| output-location: column
+#| echo: true
+#| message: false
+#| warning: false
+
+from pathlib import Path
+import pandas as pd
+import matplotlib.pyplot as plt
+import networkx as nx
+
+csv_path = Path("data/citation_edges.csv")
+df = pd.read_csv(csv_path)
+
+G = nx.from_pandas_edgelist(
+    df,
+    source="citing",
+    target="cited",
+    create_using=nx.DiGraph()
+)
+
+years = {}
+years.update(dict(zip(df["citing"], df["citing_year"])))
+years.update(dict(zip(df["cited"], df["cited_year"])))
+nx.set_node_attributes(G, years, "year")
+
+pos = nx.spring_layout(G, seed=7, k=0.6)
+
+year_attr = nx.get_node_attributes(G, "year")
+
+years_sorted = sorted({y for y in year_attr.values() if y is not None})
+year_to_x = {y: i for i, y in enumerate(years_sorted)}
+
+pos2 = nx.spring_layout(G, seed=7, k=0.6)
+for n in G.nodes:
+    y = year_attr.get(n)
+    if y is not None:
+        pos2[n][0] = year_to_x[y]
+
+plt.figure(figsize=(8, 6))
+nx.draw_networkx_edges(G, pos2, arrows=True, arrowstyle="-|>", arrowsize=10, width=0.8, alpha=0.45)
+nx.draw_networkx_nodes(G, pos2, node_size=280)
+nx.draw_networkx_labels(G, pos2, font_size=7)
+plt.title("Citation network (layered by year)")
+plt.axis("off")
+plt.tight_layout()
+plt.show()
+```
+
+- A mapping (in line with scoping reviews **TODO: link to data in caption**)
+
+```{mermaid}
+mindmap
+  root((Platform economy research topics))
+    Bias, Discrimination, and Inequality
+      Gender pay gaps & wage inequality
+      Racial & ethnic discrimination
+      Age-related & disability-related exclusion
+      Homophily & social bias
+      Stereotypes, beauty & congruity effects
+    Trust, Reputation, and Signaling
+      Reputation systems & ratings
+      Signaling theory & information asymmetries
+      Institutional & third-party trust mechanisms
+      Bias, inflation & failures of reputation systems
+    Market Design, Pricing, and Matching
+      Auction vs fixed-price mechanisms
+      Matching efficiency & bidder entry
+      Pricing strategies & wage formation
+      Contract duration & task design
+    Platform Governance and Control
+      Centralized vs decentralized governance
+      Monitoring & control systems
+      Institutional mechanisms & power relations
+      Ethics, norms & regulation
+    Worker Participation, Motivation, and Careers
+      Motivations & barriers to participation
+      Inclusion of older & marginalized workers
+      Career paths & professional identity
+      Participation under economic constraints
+    Globalization and Spatial Dynamics of Platform Work
+      Offshoring & global competition
+      Home bias & geo-economic effects
+      Local economic conditions
+      Virtual vs physical labor mobility
+```
+
+::: {.callout-important}
+The data repository (colrev project) is currently stored separately: [fs-ise/C5-DM-vignette](https://github.com/fs-ise/C5-DM-vignette){target=_blank}.
+Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet (it should be available in the `data/data/paper.md`).
+At the moment, it will be kept separately to allow for forced-push updaes.
+
+**TODO**:
+
+- Consider switching the framework illustration (process left, principles on the right?)
+- Update links in this document
+- Include vignette (screenshot?) in the paper
+- Intro: refer to C5-DM framework and introduce annotations (5C)
+:::
+
 
 [^1]: For the illustration, we relied on open-access API-searches, because licensing issues do not allow for publication of raw data exported from databases like WOS or EBSCO.
 [^2]: Indexing in SYNERGY, SearchRXiv is planned once the review progresses beyond the *illustration* stages.
