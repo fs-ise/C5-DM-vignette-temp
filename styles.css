@@ -1,0 +1,5 @@
+/* justify body text */
+p {
+  text-align: justify;
+  hyphens: auto;          /* makes justification look much better */
+}

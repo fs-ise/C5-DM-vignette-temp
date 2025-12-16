@@ -1,0 +1,1 @@
+rm -R _manuscript/ && rm -R _freeze/ && quarto render && quarto render curate-info.qmd --to html && mv curate-info_files _manuscript/ && mv curate-info.html _manuscript/curate-info.html
