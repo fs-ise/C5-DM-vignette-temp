@@ -94,9 +94,6 @@ div.csl-indent {
 <script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -162,7 +159,7 @@ div.csl-indent {
   <li><a href="#prescreen" id="toc-prescreen" class="nav-link" data-scroll-target="#prescreen">Prescreen</a></li>
   <li><a href="#data-extraction" id="toc-data-extraction" class="nav-link" data-scroll-target="#data-extraction">Data extraction</a></li>
   <li><a href="#synthesis" id="toc-synthesis" class="nav-link" data-scroll-target="#synthesis">Synthesis</a></li>
-  <li><a href="#other-review-methodologies" id="toc-other-review-methodologies" class="nav-link" data-scroll-target="#other-review-methodologies">Other review methodologies</a></li>
+  <li><a href="#data-availability" id="toc-data-availability" class="nav-link" data-scroll-target="#data-availability">Data availability</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 <div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index-preview.html"><i class="bi bi-journal-code"></i>Article Notebook</a></li></ul></div></nav>
@@ -176,6 +173,30 @@ div.csl-indent {
   
 
 
+<div class="callout callout-style-default callout-important callout-titled" title="TODO">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>TODO
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The data repository (colrev project) is currently stored separately: <a href="https://github.com/fs-ise/C5-DM-vignette" target="_blank">fs-ise/C5-DM-vignette</a>. Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet (it should be available in the <code>data/data/paper.md</code>). At the moment, it will be kept separately to allow for forced-push updaes.</p>
+<p><strong>TODO</strong>:</p>
+<ul>
+<li>Consider switching the framework illustration (process left, principles on the right?)</li>
+<li>PRISMA chart is generated but needs to be tested properly</li>
+<li>Update links in this document</li>
+<li>Include vignette (screenshot?) in the paper</li>
+<li>Intro: refer to C5-DM framework and introduce annotations (5C)</li>
+</ul>
+</div>
+</div>
+</div>
 <p>Building on the C5-DM framework for data management in literature reviews <span class="citation" data-cites="WagnerEtAl2026">(<a href="#ref-WagnerEtAl2026" role="doc-biblioref">Wagner et al. 2026</a>)</span>, this vignette illustrates how data management principles can be implemented in an literature review. The framework foregrounds data conceptualization, collection, curation, control, and consumption as foundational activities that shape the transparency, reliability, and reuse of literature review outcomes. The vignette is organized into two complementary parts. The middle column presents a systematic literature review following established reporting conventions. The right column explains how the manuscript is internally grounded in explicit data management decisions aligned with the C5-DM framework, adding an interactive layer of annotations that makes these decisions visible. The vignette thus serves as a concrete illustration of good data management practice in literature reviews—one that readers can follow directly in their own work while also sharpening their understanding of what to look for when evaluating other software solutions and data management approaches.</p>
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
@@ -196,39 +217,17 @@ div.csl-indent {
 </div></div><section id="plan" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="plan">Plan</h2>
 <p>The review is conducted using a <a href="https://github.com/fs-ise/C5-DM-vignette" target="_blank">shared GitHub repository</a>, which was be synchronized locally by the team.</p>
-<!--
-simpler button:
-<a href="curate-info.html" target="_blank" rel="noopener noreferrer"
-   onclick="const w=window.open(this.href,'curatePopup','popup=yes,width=900,height=700');
-            if(w){ w.focus(); return false; }">
-  <span style="display:inline-block;padding:.18rem .55rem;border-radius:999px;box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.12); background:#fef3c7;color:#92400e;border:1px solid #fbbf24;font-size:.85em;font-weight:600;">
-    Curate
-  </span>
-</a>
--->
 
 <div class="no-row-height column-margin column-container"><div class="margin-aside">
-<p><a href="curate-info.html" target="_blank" rel="noopener noreferrer" aria-label="Open Curate info (opens in a popup window)" style="text-decoration:none;" onclick="const w=window.open(this.href,'curatePopup','popup=yes,width=900,height=700');
-            if(w){ w.focus(); return false; }"> <span style="
-      display:inline-flex; align-items:center; gap:.35rem;
-      padding:.18rem .6rem;
-      border-radius:999px;
-      border:1px solid #fbbf24;
-      background:#fef3c7;
-      color:#92400e;
-      font-size:.85em;
-      font-weight:700;
-      cursor:pointer;
-      user-select:none;
-
-      box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.18);
-      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
-    " onmouseenter="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 2px 0 rgba(0,0,0,.05), 0 0 0 3px rgba(59,130,246,.32)'; this.style.filter='brightness(0.98)';" onmouseleave="this.style.transform=''; this.style.boxShadow='0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.18)'; this.style.filter='';"> Curate: <span aria-hidden="true" style="font-size:1em; opacity:.85;">Storing data in a version-controlled folder. ↗</span> </span> </a></p>
+<p><a class="curate-pill" href="curate-info.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Curate: <span class="curate-pill__detail" aria-hidden="true">Storing data in a version-controlled folder. ↗</span> </a></p>
 </div></div></section>
-<section id="search" class="level2">
+<section id="search" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="search">Search</h2>
 <p>We specified search strategies for the DBLP and Crossref application programming interfaces (APIs)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> using the core keyword <em>microsourcing</em> and a set of semantically related synonyms. We also reused samples from prior reviews <span class="citation" data-cites="WagnerPresterPare2021 Fiers2023">(<a href="#ref-WagnerPresterPare2021" role="doc-biblioref">Wagner, Prester, and Paré 2021</a>; <a href="#ref-Fiers2023" role="doc-biblioref">Fiers 2023</a>)</span>. The resulting query formulations were systematically tabulated to document the conceptual scope of the search and to enable consistent execution across data sources (see <a href="#tbl-search-overview" class="quarto-xref">Table&nbsp;1</a>).</p>
-<div id="tbl-search-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="curate-pill" href="consume-reuse-prior-review.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Consume: <span class="curate-pill__detail" aria-hidden="true">Reuse of prior review data. ↗</span> </a></p>
+</div></div><div id="tbl-search-overview" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-search-overview-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Overview of search strategies and results.
@@ -269,34 +268,19 @@ Table&nbsp;1: Overview of search strategies and results.
 </figure>
 </div>
 <p>The search strategie are stored in JSON format together with the raw data files in the <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search" target="_blank">data/search</a> directory, in line with the standard of <span class="citation" data-cites="HaddawayRethlefsenDaviesEtAl2022">Haddaway et al. (<a href="#ref-HaddawayRethlefsenDaviesEtAl2022" role="doc-biblioref">2022</a>)</span>.</p>
-<p>Record metadata is curated as follows:</p>
-<ul>
-<li>Data retrieved in the search is stored in the <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search" target="_blank">data/search</a> directory; the <a href="https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search" target="_blank">Git history of this path</a> shows that the files were preserved in their original form, i.e., treated as raw data</li>
-<li>Records were imported into the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib" target="_blank">data/records.bib</a> as the primary data structure; the <a href="https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib" target="_blank">Git history of this file</a> documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)</li>
-</ul>
-<p>For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev <span class="citation" data-cites="WagnerPrester2025">(<a href="#ref-WagnerPrester2025" role="doc-biblioref">Wagner and Prester 2025</a>)</span>. BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Explanation">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Explanation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Data was structured as follows:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="figures/recommendation.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Data structures"><img src="figures/recommendation.png" class="img-fluid figure-img" alt="Data structures"></a></p>
-<figcaption>Data structures</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="curate-pill" href="conceptualize-info.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Conceptualize: <span class="curate-pill__detail" aria-hidden="true">Keeping track of raw and primary records. ↗</span> </a></p>
+</div><div class="margin-aside">
+<p><a class="curate-pill" href="control-standard-formats.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Control: <span class="curate-pill__detail" aria-hidden="true">Use of standard file formats. ↗</span> </a></p>
+<p>TODO: mention BibTex and JSON.</p>
+</div><div class="margin-aside">
+<p><a class="curate-pill" href="collect-search-strategy-design.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Collect: <span class="curate-pill__detail" aria-hidden="true">Search strategy design. ↗</span> </a></p>
+</div><div class="margin-aside">
+<p><a class="curate-pill" href="collect-transparency-access.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Collect: <span class="curate-pill__detail" aria-hidden="true">Transparency on data coverage/access (??). ↗</span> </a></p>
+</div></div>
+
+
 <div class="callout callout-style-default callout-note callout-titled" title="TODO">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -317,28 +301,19 @@ Table&nbsp;1: Overview of search strategies and results.
 </div>
 </div>
 </section>
-<section id="dedupe" class="level2">
+<section id="dedupe" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="dedupe">Dedupe</h2>
 <p>Metadata was prepared using CoLRev and extensions (see <a href="https://github.com/fs-ise/C5-DM-vignette/commit/051e115fff389f209afb9a4fbe77e6a33271264c" target="_blank">prep commit</a>).</p>
 <p>Deduplication was done using BibDedupe <span class="citation" data-cites="Wagner2024">(<a href="#ref-Wagner2024" role="doc-biblioref">Wagner 2024</a>)</span>. Deduplication changes are in <a href="https://github.com/fs-ise/C5-DM-vignette/commit/c22178d10fb90954d681f428fc5b08c72b5e6d48" target="_blank">dedupe commit</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="TODO">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>TODO
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Dedupe changes were validated using the max-diff strategy (<code>colrev validate XXXX</code>). Preparation changes were validated using the max-diff strategy (<code>colrev validate XXXX</code>).</p>
-</div>
-</div>
-</div>
-</section>
-<section id="prescreen" class="level2">
+
+<!--
+Dedupe changes were validated using the max-diff strategy (`colrev validate XXXX`).
+Preparation changes were validated using the max-diff strategy (`colrev validate XXXX`).
+-->
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="curate-pill" href="collect-preparation-procedures.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Collect: <span class="curate-pill__detail" aria-hidden="true">Data preparation procedures. ↗</span> </a></p>
+</div></div></section>
+<section id="prescreen" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="prescreen">Prescreen</h2>
 <div class="callout callout-style-default callout-note callout-titled" title="Manual task">
 <div class="callout-header d-flex align-content-center">
@@ -356,8 +331,11 @@ Table&nbsp;1: Overview of search strategies and results.
 <strong>Expected output:</strong> <code>records_screened.bib</code> <strong>History filter:</strong> TODO (e.g., “prescreen” in commit title)</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note callout-titled" title="TODO">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="curate-pill" href="control-evaluating-reliability.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Control: <span class="curate-pill__detail" aria-hidden="true">Evaluating the reliability of AI contributions. ↗</span> </a></p>
+</div></div><div class="callout callout-style-default callout-note callout-titled" title="TODO">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -366,12 +344,12 @@ Table&nbsp;1: Overview of search strategies and results.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Replace this figure:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="figures/illustration-lr-transparency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Data structures"><img src="figures/illustration-lr-transparency.png" class="img-fluid figure-img" alt="Data structures"></a></p>
+<p><a href="figures/illustration-lr-transparency.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Data structures"><img src="figures/illustration-lr-transparency.png" class="img-fluid figure-img" alt="Data structures"></a></p>
 <figcaption>Data structures</figcaption>
 </figure>
 </div>
@@ -386,66 +364,41 @@ Table&nbsp;1: Overview of search strategies and results.
 </div>
 </div>
 </section>
-<section id="data-extraction" class="level2">
+<section id="data-extraction" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="data-extraction">Data extraction</h2>
 <p>In line with the methodology of systematic reviews [<strong>REFS</strong>], we selected structured data forms to extract evidence from the studies (a preliminary coding scheme is <a href="temp_file.txt" target="_blank">TODO</a> and the pilot coding <a href="temp_file.txt" target="_blank">TODO</a>). Data is extracted <a href="data">here</a>.</p>
-<div class="callout callout-style-default callout-note callout-titled" title="Other review methodologies">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-note callout-titled" title="Manual task">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Other review methodologies
+<span class="screen-reader-only">Note</span>Manual task
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>For other review methodologies, different data extraction approaches must be considered. The following examples were added for illustration purposes:</p>
-<ul>
-<li>Bibliometric data (<a href="temp_file.txt" target="_blank">TODO</a>).</li>
-<li>Emergent coding (<a href="temp_file.txt" target="_blank">TODO</a>) in line with the recommendations of <span class="citation" data-cites="GioiaEtAl2013">Gioia, Corley, and Hamilton (<a href="#ref-GioiaEtAl2013" role="doc-biblioref">2013</a>)</span> and the YAML workflow of <span class="citation" data-cites="Wang2022">Wang (<a href="#ref-Wang2022" role="doc-biblioref">2022</a>)</span>. <!--
-https://aisel.aisnet.org/acis2022/17/
-https://blairwang.b-cdn.net/attachments/ACIS2022-YAML-Slides-rev02.pdf
---></li>
-</ul>
+<p><strong>Trigger:</strong> <code>records_deduped.bib</code> updated<br>
+<strong>Responsible:</strong> Two independent coders (GW anmd JP)<br>
+<strong>Protocol:</strong> data extraction form and protocol (see <code>protocol/data_extraction.md</code>)<br>
+<strong>Expected output:</strong> <code>extracted_evidence.yaml</code> <strong>History filter:</strong> TODO (e.g., “extract” in commit title)</p>
 </div>
 </div>
-</div>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Explanation">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Explanation
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>In line with recommendation XY, data structures range from unstructured to structured; they should be aligned with the type of review.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="figures/data_structures.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Data structures"><img src="figures/data_structures.png" class="img-fluid figure-img" alt="Data structures"></a></p>
-<figcaption>Data structures</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="curate-pill" href="curate-structure-fit.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Curate: <span class="curate-pill__detail" aria-hidden="true">Aligning data structure and methodology. ↗</span> </a></p>
+</div><div class="margin-aside">
+<p><a class="curate-pill" href="consume-non-automation.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Consume: <span class="curate-pill__detail" aria-hidden="true">Understand when automated extraction is not appropriate. ↗</span> </a></p>
+</div></div>
 </section>
 <section id="synthesis" class="level2">
 <h2 class="anchored" data-anchor-id="synthesis">Synthesis</h2>
-<p>The narrative synthesis is in the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md" target="_blank">paper document</a> in Markdown format, allowing for larger teams to work on the same document (similar to the <a href="https://github.com/greenelab/covid19-review">covid19-review</a>).</p>
-<p>To make the review reusable, we added the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/LICENSE.txt">CC BY 4.0</a> license<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
-<p>The current status of the project is automatically updated with every change and reflected in the PRISMA chart <span class="citation" data-cites="PageMcKenzieBossuytEtAl2021">(<a href="#ref-PageMcKenzieBossuytEtAl2021" role="doc-biblioref">Page et al. 2021</a>)</span>:</p>
+<p>The narrative synthesis is in the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md" target="_blank">paper document</a> in Markdown format, allowing for larger teams to work on the same document (similar to the <a href="https://github.com/greenelab/covid19-review">covid19-review</a>). The current status of the project is automatically updated with every change and reflected in the PRISMA chart <span class="citation" data-cites="PageMcKenzieBossuytEtAl2021">(<a href="#ref-PageMcKenzieBossuytEtAl2021" role="doc-biblioref">Page et al. 2021</a>)</span>:</p>
 <div id="cell-fig-prisma" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div id="fig-prisma" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-prisma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-prisma-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;1: PRISMA Flow Chart (generated by python-prisma (TODO))"><img src="index_files/figure-html/fig-prisma-output-1.png" width="763" height="686" class="figure-img"></a>
+<a href="index_files/figure-html/fig-prisma-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;1: PRISMA Flow Chart (generated by python-prisma (TODO))"><img src="index_files/figure-html/fig-prisma-output-1.png" width="763" height="639" class="figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-prisma-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: PRISMA Flow Chart (generated by <a href="link">python-prisma (TODO)</a>)
@@ -454,19 +407,6 @@ Figure&nbsp;1: PRISMA Flow Chart (generated by <a href="link">python-prisma (TOD
 </div>
 </div>
 <a class="quarto-notebook-link" id="nblink-1" href="index-preview.html#cell-fig-prisma">Source: Article Notebook</a></div>
-<div class="callout callout-style-default callout-note callout-titled" title="TODO">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>TODO
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The PRISMA chart is generated but needs to be tested properly.</p>
-</div>
-</div>
 <p><a href="#tbl-evidence" class="quarto-xref">Table&nbsp;2</a> provides summary of extracted evidence.</p>
 <div class="cell" data-message="false" data-execution_count="3">
 <details class="code-fold">
@@ -502,13 +442,13 @@ Figure&nbsp;1: PRISMA Flow Chart (generated by <a href="link">python-prisma (TOD
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>df_compact <span class="op">=</span> df[compact_cols].rename(columns<span class="op">=</span>{<span class="st">"citation_key"</span>: <span class="st">"study"</span>})</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>df_compact</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-<div id="tbl-evidence" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-message="false" data-execution_count="3">
+<div id="tbl-evidence" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-execution_count="3" data-message="false">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Table of evidence (generated from <a href="link">TODO</a>)
 </figcaption>
 <div aria-describedby="tbl-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="cell-output cell-output-display" data-execution_count="163">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div>
 
 
@@ -610,7 +550,7 @@ Table&nbsp;2: Table of evidence (generated from <a href="link">TODO</a>)
 <div id="fig-aggregated-evidence" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-aggregated-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-aggregated-evidence-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;2: Aggregated evidence (generated from TODO)"><img src="index_files/figure-html/fig-aggregated-evidence-output-1.png" width="782" height="278" class="figure-img"></a>
+<a href="index_files/figure-html/fig-aggregated-evidence-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;2: Aggregated evidence (generated from TODO)"><img src="index_files/figure-html/fig-aggregated-evidence-output-1.png" width="782" height="278" class="figure-img"></a>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-aggregated-evidence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;2: Aggregated evidence (generated from <a href="link">TODO</a>)
@@ -620,137 +560,15 @@ Figure&nbsp;2: Aggregated evidence (generated from <a href="link">TODO</a>)
 </div>
 </div>
 </section>
-<section id="other-review-methodologies" class="level2">
-<h2 class="anchored" data-anchor-id="other-review-methodologies">Other review methodologies</h2>
-<p>For other review methodologies, different data analysis approaches must be considered. The following examples were added for illustration purposes:</p>
-<ul>
-<li>A bibliometric analysis:</li>
-</ul>
-<div id="cell-fig-citation-network" class="cell" data-message="false" data-output-location="column" data-execution_count="5">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> networkx <span class="im">as</span> nx</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>csv_path <span class="op">=</span> Path(<span class="st">"data/citation_edges.csv"</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(csv_path)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> nx.from_pandas_edgelist(</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    df,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    source<span class="op">=</span><span class="st">"citing"</span>,</span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    target<span class="op">=</span><span class="st">"cited"</span>,</span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    create_using<span class="op">=</span>nx.DiGraph()</span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> {}</span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>years.update(<span class="bu">dict</span>(<span class="bu">zip</span>(df[<span class="st">"citing"</span>], df[<span class="st">"citing_year"</span>])))</span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>years.update(<span class="bu">dict</span>(<span class="bu">zip</span>(df[<span class="st">"cited"</span>], df[<span class="st">"cited_year"</span>])))</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>nx.set_node_attributes(G, years, <span class="st">"year"</span>)</span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>pos <span class="op">=</span> nx.spring_layout(G, seed<span class="op">=</span><span class="dv">7</span>, k<span class="op">=</span><span class="fl">0.6</span>)</span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>year_attr <span class="op">=</span> nx.get_node_attributes(G, <span class="st">"year"</span>)</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>years_sorted <span class="op">=</span> <span class="bu">sorted</span>({y <span class="cf">for</span> y <span class="kw">in</span> year_attr.values() <span class="cf">if</span> y <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>})</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>year_to_x <span class="op">=</span> {y: i <span class="cf">for</span> i, y <span class="kw">in</span> <span class="bu">enumerate</span>(years_sorted)}</span>
-<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>pos2 <span class="op">=</span> nx.spring_layout(G, seed<span class="op">=</span><span class="dv">7</span>, k<span class="op">=</span><span class="fl">0.6</span>)</span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> G.nodes:</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> year_attr.get(n)</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> y <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a>        pos2[n][<span class="dv">0</span>] <span class="op">=</span> year_to_x[y]</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">6</span>))</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>nx.draw_networkx_edges(G, pos2, arrows<span class="op">=</span><span class="va">True</span>, arrowstyle<span class="op">=</span><span class="st">"-|&gt;"</span>, arrowsize<span class="op">=</span><span class="dv">10</span>, width<span class="op">=</span><span class="fl">0.8</span>, alpha<span class="op">=</span><span class="fl">0.45</span>)</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>nx.draw_networkx_nodes(G, pos2, node_size<span class="op">=</span><span class="dv">280</span>)</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>nx.draw_networkx_labels(G, pos2, font_size<span class="op">=</span><span class="dv">7</span>)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Citation network (layered by year)"</span>)</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">"off"</span>)</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-display">
-<div id="fig-citation-network" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-citation-network-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_files/figure-html/fig-citation-network-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;3: Citation network (generated from TODO)"><img src="index_files/figure-html/fig-citation-network-output-1.png" width="758" height="566" class="figure-img"></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-citation-network-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;3: Citation network (generated from <a href="link">TODO</a>)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>A mapping (in line with scoping reviews <strong>TODO: link to data in caption</strong>)</li>
-</ul>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">mindmap
-  root((Platform economy research topics))
-    Bias, Discrimination, and Inequality
-      Gender pay gaps &amp; wage inequality
-      Racial &amp; ethnic discrimination
-      Age-related &amp; disability-related exclusion
-      Homophily &amp; social bias
-      Stereotypes, beauty &amp; congruity effects
-    Trust, Reputation, and Signaling
-      Reputation systems &amp; ratings
-      Signaling theory &amp; information asymmetries
-      Institutional &amp; third-party trust mechanisms
-      Bias, inflation &amp; failures of reputation systems
-    Market Design, Pricing, and Matching
-      Auction vs fixed-price mechanisms
-      Matching efficiency &amp; bidder entry
-      Pricing strategies &amp; wage formation
-      Contract duration &amp; task design
-    Platform Governance and Control
-      Centralized vs decentralized governance
-      Monitoring &amp; control systems
-      Institutional mechanisms &amp; power relations
-      Ethics, norms &amp; regulation
-    Worker Participation, Motivation, and Careers
-      Motivations &amp; barriers to participation
-      Inclusion of older &amp; marginalized workers
-      Career paths &amp; professional identity
-      Participation under economic constraints
-    Globalization and Spatial Dynamics of Platform Work
-      Offshoring &amp; global competition
-      Home bias &amp; geo-economic effects
-      Local economic conditions
-      Virtual vs physical labor mobility
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The data repository (colrev project) is currently stored separately: <a href="https://github.com/fs-ise/C5-DM-vignette" target="_blank">fs-ise/C5-DM-vignette</a>. Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet (it should be available in the <code>data/data/paper.md</code>). At the moment, it will be kept separately to allow for forced-push updaes.</p>
-<p><strong>TODO</strong>:</p>
-<ul>
-<li>Consider switching the framework illustration (process left, principles on the right?)</li>
-<li>Update links in this document</li>
-<li>Include vignette (screenshot?) in the paper</li>
-<li>Intro: refer to C5-DM framework and introduce annotations (5C)</li>
-</ul>
-</div>
-</div>
+<section id="data-availability" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="data-availability">Data availability</h2>
+<p>To make the review reusable, the data was published on GitHub under the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/LICENSE.txt">CC BY 4.0</a> license<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<p><a class="curate-pill" href="curate-data-publishing.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Curate: <span class="curate-pill__detail" aria-hidden="true">Enabling reuse through data sharing. ↗</span> </a></p>
+</div><div class="margin-aside">
+<p><a class="curate-pill" href="consume-licenses.html" rel="noopener noreferrer" data-popup="curatePopup" data-popup-width="900" data-popup-height="700"> Consume: <span class="curate-pill__detail" aria-hidden="true">Selecting open licenses. ↗</span> </a></p>
+</div></div>
 </section>
 <section id="references" class="level1 unnumbered">
 
@@ -762,9 +580,6 @@ Important
 <div id="ref-Fiers2023" class="csl-entry" role="listitem">
 Fiers, Fien. 2023. <span>“Inequality and Discrimination in the Online Labor Market: A Scoping Review.”</span> <em>New Media &amp; Society</em> 25 (12): 3714–34. <a href="https://doi.org/10.1177/14614448221128379">https://doi.org/10.1177/14614448221128379</a>.
 </div>
-<div id="ref-GioiaEtAl2013" class="csl-entry" role="listitem">
-Gioia, Dennis A, Kevin G Corley, and Aimee L Hamilton. 2013. <span>“Seeking Qualitative Rigor in Inductive Research: Notes on the Gioia Methodology.”</span> <em>Organizational Research Methods</em> 16 (1): 15–31.
-</div>
 <div id="ref-HaddawayRethlefsenDaviesEtAl2022" class="csl-entry" role="listitem">
 Haddaway, Neal R., Melissa L. Rethlefsen, Melinda Davies, Julie Glanville, Bethany McGowan, Kate Nyhan, and Sarah Young. 2022. <span>“A Suggested Data Structure for Transparent and Repeatable Reporting of Bibliographic Searching.”</span> <em>Campbell Systematic Reviews</em> 18 (4): 1–12. <a href="https://doi.org/10.1002/CL2.1288">https://doi.org/10.1002/CL2.1288</a>.
 </div>
@@ -774,17 +589,11 @@ Page, Matthew J., Joanne E. McKenzie, Patrick M. Bossuyt, Isabelle Boutron, Tamm
 <div id="ref-Wagner2024" class="csl-entry" role="listitem">
 Wagner, Gerit. 2024. <span>“BibDedupe: An Open-Source Python Library for Bibliographic Record Deduplication.”</span> <em>Journal of Open Source Software</em> 9 (97): 6318. <a href="https://doi.org/10.21105/JOSS.06318">https://doi.org/10.21105/JOSS.06318</a>.
 </div>
-<div id="ref-WagnerPrester2025" class="csl-entry" role="listitem">
-Wagner, Gerit, and Julian Prester. 2025. <span>“CoLRev: An Open-Source Environment for Collaborative Reviews.”</span> <a href="https://github.com/CoLRev-Environment/colrev">https://github.com/CoLRev-Environment/colrev</a>.
-</div>
 <div id="ref-WagnerEtAl2026" class="csl-entry" role="listitem">
 Wagner, Gerit, Julian Prester, Roman Lukyanenko, and Guy Paré. 2026. <span>“Data Management in Literature Reviews: The C5-DM Framework.”</span> <em>Research Synthesis Methods (Under Review)</em>.
 </div>
 <div id="ref-WagnerPresterPare2021" class="csl-entry" role="listitem">
 Wagner, Gerit, Julian Prester, and Guy Paré. 2021. <span>“Exploring the Boundaries and Processes of Digital Platforms for Knowledge Work: A Review of Information Systems Research.”</span> <em>The Journal of Strategic Information Systems</em> 30 (4): 101694. <a href="https://doi.org/10.1016/j.jsis.2021.101694">https://doi.org/10.1016/j.jsis.2021.101694</a>.
-</div>
-<div id="ref-Wang2022" class="csl-entry" role="listitem">
-Wang, Blair. 2022. <span>“Programming for Qualitative Data Analysis: Towards a YAML Workflow.”</span> In <em>Australasian Conference on Information Systems</em>.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
@@ -794,6 +603,24 @@ Wang, Blair. 2022. <span>“Programming for Qualitative Data Analysis: Towards a
 </ol>
 </section></div></main>
 <!-- /main column -->
+<script>
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a[data-popup]");
+  if (!a) return;
+
+  // Only intercept plain left-clicks
+  if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+  e.preventDefault();
+
+  const name = a.dataset.popup || "popup";
+  const w = Number(a.dataset.popupWidth || 900);
+  const h = Number(a.dataset.popupHeight || 700);
+
+  const popup = window.open(a.href, name, `popup=yes,width=${w},height=${h},noopener,noreferrer`);
+  if (popup) popup.focus();
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

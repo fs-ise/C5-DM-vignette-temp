@@ -3,3 +3,35 @@ p {
   text-align: justify;
   hyphens: auto;          /* makes justification look much better */
 }
+
+a.curate-pill{
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:.35rem;
+
+  padding:.18rem .6rem;
+  border-radius:999px;
+  border:1px solid #fbbf24;
+  background:#fef3c7;
+  color:#92400e;
+
+  font-size:.85em;
+  font-weight:700;
+  cursor:pointer;
+  user-select:none;
+
+  box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.18);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+
+a.curate-pill:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 2px 0 rgba(0,0,0,.05), 0 0 0 3px rgba(59,130,246,.32);
+  filter: brightness(0.98);
+}
+
+.curate-pill__detail{
+  font-size:1em;
+  opacity:.85;
+}
