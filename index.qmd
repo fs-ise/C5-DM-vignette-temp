@@ -7,9 +7,26 @@ format:
     code-fold: true
     code-summary: "Show the code"
     css: styles.css
+    include-after-body:
+      - assets/popup-handler.html
 execute:
   freeze: auto
 ---
+
+::: {.callout-important title="TODO" collapse=true}
+The data repository (colrev project) is currently stored separately: [fs-ise/C5-DM-vignette](https://github.com/fs-ise/C5-DM-vignette){target=_blank}.
+Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet (it should be available in the `data/data/paper.md`).
+At the moment, it will be kept separately to allow for forced-push updaes.
+
+**TODO**:
+
+- Consider switching the framework illustration (process left, principles on the right?)
+- PRISMA chart is generated but needs to be tested properly
+- Update links in this document
+- Include vignette (screenshot?) in the paper
+- Intro: refer to C5-DM framework and introduce annotations (5C)
+:::
+
 
 Building on the C5-DM framework for data management in literature reviews [@WagnerEtAl2026], this vignette illustrates how data management principles can be implemented in an literature review.
 The framework foregrounds data conceptualization, collection, curation, control, and consumption as foundational activities that shape the transparency, reliability, and reuse of literature review outcomes.
@@ -30,49 +47,15 @@ This column explains how the prinicples of the framework are implemented. ⬇️
 
 The review is conducted using a [shared GitHub repository](https://github.com/fs-ise/C5-DM-vignette){target=_blank}, which was be synchronized locally by the team.
 
-<!--
-simpler button:
-<a href="curate-info.html" target="_blank" rel="noopener noreferrer"
-   onclick="const w=window.open(this.href,'curatePopup','popup=yes,width=900,height=700');
-            if(w){ w.focus(); return false; }">
-  <span style="display:inline-block;padding:.18rem .55rem;border-radius:999px;box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.12); background:#fef3c7;color:#92400e;border:1px solid #fbbf24;font-size:.85em;font-weight:600;">
-    Curate
-  </span>
-</a>
--->
-
 ::: aside
-
-<a href="curate-info.html"
-   target="_blank" rel="noopener noreferrer"
-   aria-label="Open Curate info (opens in a popup window)"
-   style="text-decoration:none;"
-   onclick="const w=window.open(this.href,'curatePopup','popup=yes,width=900,height=700');
-            if(w){ w.focus(); return false; }">
-  <span
-    style="
-      display:inline-flex; align-items:center; gap:.35rem;
-      padding:.18rem .6rem;
-      border-radius:999px;
-      border:1px solid #fbbf24;
-      background:#fef3c7;
-      color:#92400e;
-      font-size:.85em;
-      font-weight:700;
-      cursor:pointer;
-      user-select:none;
-
-      box-shadow: 0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.18);
-      transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
-    "
-    onmouseenter="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 2px 0 rgba(0,0,0,.05), 0 0 0 3px rgba(59,130,246,.32)'; this.style.filter='brightness(0.98)';"
-    onmouseleave="this.style.transform=''; this.style.boxShadow='0 1px 0 rgba(0,0,0,.05), 0 0 0 2px rgba(59,130,246,.18)'; this.style.filter='';"
-  >
-    Curate: <span aria-hidden="true" style="font-size:1em; opacity:.85;">Storing data in a version-controlled folder. ↗</span>
-  </span>
+<a class="curate-pill"
+   href="curate-info.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Curate: <span aria-hidden="true" class="curate-pill__detail">Storing data in a version-controlled folder. ↗</span>
 </a>
-
-
 :::
 
 ## Search
@@ -81,6 +64,16 @@ We specified search strategies for the DBLP and Crossref application programming
 We also reused samples from prior reviews [@WagnerPresterPare2021;@Fiers2023].
 The resulting query formulations were systematically tabulated to document the conceptual scope of the search and to enable consistent execution across data sources (see @tbl-search-overview).
 
+::: aside
+<a class="curate-pill"
+   href="consume-reuse-prior-review.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Consume: <span aria-hidden="true" class="curate-pill__detail">Reuse of prior review data. ↗</span>
+</a>
+:::
 
 ```{python}
 #| output: asis
@@ -90,7 +83,7 @@ import json
 from pathlib import Path
 from urllib.parse import quote
 
-SEARCH_DIR = Path("/home/gerit/ownCloud/action-office/LRDM/C5-DM-vignette/data/search")
+SEARCH_DIR = Path("/home/gerit/ownCloud/data/literature_reviews/LRDM/C5-DM-vignette/data/search")
 
 def md_link(text: str, target_path: str) -> str:
     target_path_posix = Path(target_path).as_posix()
@@ -133,19 +126,50 @@ print("\n:::")
 
 The search strategie are stored in JSON format together with the raw data files in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory, in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
 
-Record metadata is curated as follows:
+::: aside
+<a class="curate-pill"
+   href="conceptualize-info.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Conceptualize: <span aria-hidden="true" class="curate-pill__detail">Keeping track of raw and primary records. ↗</span>
+</a>
+:::
 
-- Data retrieved in the search is stored in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory; the [Git history of this path](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search){target=_blank} shows that the files were preserved in their original form, i.e., treated as raw data
-- Records were imported into the [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib){target=_blank} as the primary data structure; the [Git history of this file](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib){target=_blank} documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)
+::: aside
+<a class="curate-pill"
+   href="control-standard-formats.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Control: <span aria-hidden="true" class="curate-pill__detail">Use of standard file formats. ↗</span>
+</a>
 
-For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev [@WagnerPrester2025].
-BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.
+TODO: mention BibTex and JSON.
+:::
 
-::: {.callout-note title="Explanation"  appearance="minimal" icon=false collapse=true}
+::: aside
+<a class="curate-pill"
+   href="collect-search-strategy-design.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Collect: <span aria-hidden="true" class="curate-pill__detail">Search strategy design. ↗</span>
+</a>
+:::
 
-Data was structured as follows:
-
-![Data structures](figures/recommendation.png)
+::: aside
+<a class="curate-pill"
+   href="collect-transparency-access.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Collect: <span aria-hidden="true" class="curate-pill__detail">Transparency on data coverage/access (??). ↗</span>
+</a>
 :::
 
 ::: {.callout-note title="TODO" collapse=true}
@@ -160,10 +184,21 @@ Metadata was prepared using CoLRev and extensions (see [prep commit](https://git
 Deduplication was done using BibDedupe [@Wagner2024].
 Deduplication changes are in [dedupe commit](https://github.com/fs-ise/C5-DM-vignette/commit/c22178d10fb90954d681f428fc5b08c72b5e6d48){target=_blank}.
 
-::: {.callout-note title="TODO" collapse=true}
+::: aside
+<a class="curate-pill"
+   href="collect-preparation-procedures.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Collect: <span aria-hidden="true" class="curate-pill__detail">Data preparation procedures. ↗</span>
+</a>
+:::
+
+<!--
 Dedupe changes were validated using the max-diff strategy (`colrev validate XXXX`).
 Preparation changes were validated using the max-diff strategy (`colrev validate XXXX`).
-:::
+-->
 
 ## Prescreen
 
@@ -173,6 +208,18 @@ Preparation changes were validated using the max-diff strategy (`colrev validate
 **Protocol:** PRISMA TA screening rules (see `protocol/screening.md`)  
 **Expected output:** `records_screened.bib`
 **History filter:** TODO (e.g., "prescreen" in commit title)
+:::
+
+
+::: aside
+<a class="curate-pill"
+   href="control-evaluating-reliability.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Control: <span aria-hidden="true" class="curate-pill__detail">Evaluating the reliability of AI contributions. ↗</span>
+</a>
 :::
 
 ::: {.callout-note title="TODO" collapse=true}
@@ -189,38 +236,42 @@ Note: this could also be done in a separate branch, or the changes could be undo
 
 ## Data extraction
 
-
 In line with the methodology of systematic reviews [**REFS**], we selected structured data forms to extract evidence from the studies (a preliminary coding scheme is [TODO](temp_file.txt){target=_blank} and the pilot coding [TODO](temp_file.txt){target=_blank}).
 Data is extracted [here](data).
 
-::: {.callout-note title="Other review methodologies" collapse=true}
-
-For other review methodologies, different data extraction approaches must be considered.
-The following examples were added for illustration purposes:
-
-- Bibliometric data ([TODO](temp_file.txt){target=_blank}).
-- Emergent coding ([TODO](temp_file.txt){target=_blank}) in line with the recommendations of @GioiaEtAl2013 and the YAML workflow of @Wang2022.
-<!--
-https://aisel.aisnet.org/acis2022/17/
-https://blairwang.b-cdn.net/attachments/ACIS2022-YAML-Slides-rev02.pdf
--->
-
+::: {.callout-note title="Manual task"}
+**Trigger:** `records_deduped.bib` updated  
+**Responsible:** Two independent coders (GW anmd JP)  
+**Protocol:** data extraction form and protocol (see `protocol/data_extraction.md`)  
+**Expected output:** `extracted_evidence.yaml`
+**History filter:** TODO (e.g., "extract" in commit title)
 :::
 
-::: {.callout-note title="Explanation"  appearance="minimal" icon=false collapse=true}
+::: aside
+<a class="curate-pill"
+   href="curate-structure-fit.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Curate: <span aria-hidden="true" class="curate-pill__detail">Aligning data structure and methodology. ↗</span>
+</a>
+:::
 
-In line with recommendation XY, data structures range from unstructured to structured; they should be aligned with the type of review.
-
-![Data structures](figures/data_structures.png)
-
+::: aside
+<a class="curate-pill"
+   href="consume-non-automation.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Consume: <span aria-hidden="true" class="curate-pill__detail">Understand when automated extraction is not appropriate. ↗</span>
+</a>
 :::
 
 ## Synthesis
 
 The narrative synthesis is in the [paper document](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/data/paper.md){target=_blank} in Markdown format, allowing for larger teams to work on the same document (similar to the [covid19-review](https://github.com/greenelab/covid19-review)).
-
-To make the review reusable, we added the [CC BY 4.0](https://github.com/fs-ise/C5-DM-vignette/blob/main/LICENSE.txt) license[^2].
-
 The current status of the project is automatically updated with every change and reflected in the PRISMA chart [@PageMcKenzieBossuytEtAl2021]:
 
 ```{python}
@@ -229,13 +280,9 @@ The current status of the project is automatically updated with every change and
 
 from py_prisma import plot_prisma_from_records
 
-plot_prisma_from_records(records_path="/home/gerit/ownCloud/action-office/LRDM/C5-DM-vignette/data/records.bib", show=True)
+plot_prisma_from_records(records_path="Curate: data publishing/data/records.bib", show=True)
 
 ```
-
-::: {.callout-note title="TODO"}
-The PRISMA chart is generated but needs to be tested properly.
-:::
 
 @tbl-evidence provides summary of extracted evidence.
 
@@ -313,113 +360,30 @@ plt.show()
 
 ```
 
-## Other review methodologies
+## Data availability
 
-For other review methodologies, different data analysis approaches must be considered.
-The following examples were added for illustration purposes:
+To make the review reusable, the data was published on GitHub under the [CC BY 4.0](https://github.com/fs-ise/C5-DM-vignette/blob/main/LICENSE.txt) license[^2].
 
-- A bibliometric analysis:
+::: aside
+<a class="curate-pill"
+   href="curate-data-publishing.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Curate: <span aria-hidden="true" class="curate-pill__detail">Enabling reuse through data sharing. ↗</span>
+</a>
+:::
 
-```{python}
-#| label: fig-citation-network
-#| fig-cap: "Citation network (generated from [TODO](link))"
-#| output-location: column
-#| echo: true
-#| message: false
-#| warning: false
-
-from pathlib import Path
-import pandas as pd
-import matplotlib.pyplot as plt
-import networkx as nx
-
-csv_path = Path("data/citation_edges.csv")
-df = pd.read_csv(csv_path)
-
-G = nx.from_pandas_edgelist(
-    df,
-    source="citing",
-    target="cited",
-    create_using=nx.DiGraph()
-)
-
-years = {}
-years.update(dict(zip(df["citing"], df["citing_year"])))
-years.update(dict(zip(df["cited"], df["cited_year"])))
-nx.set_node_attributes(G, years, "year")
-
-pos = nx.spring_layout(G, seed=7, k=0.6)
-
-year_attr = nx.get_node_attributes(G, "year")
-
-years_sorted = sorted({y for y in year_attr.values() if y is not None})
-year_to_x = {y: i for i, y in enumerate(years_sorted)}
-
-pos2 = nx.spring_layout(G, seed=7, k=0.6)
-for n in G.nodes:
-    y = year_attr.get(n)
-    if y is not None:
-        pos2[n][0] = year_to_x[y]
-
-plt.figure(figsize=(8, 6))
-nx.draw_networkx_edges(G, pos2, arrows=True, arrowstyle="-|>", arrowsize=10, width=0.8, alpha=0.45)
-nx.draw_networkx_nodes(G, pos2, node_size=280)
-nx.draw_networkx_labels(G, pos2, font_size=7)
-plt.title("Citation network (layered by year)")
-plt.axis("off")
-plt.tight_layout()
-plt.show()
-```
-
-- A mapping (in line with scoping reviews **TODO: link to data in caption**)
-
-```{mermaid}
-mindmap
-  root((Platform economy research topics))
-    Bias, Discrimination, and Inequality
-      Gender pay gaps & wage inequality
-      Racial & ethnic discrimination
-      Age-related & disability-related exclusion
-      Homophily & social bias
-      Stereotypes, beauty & congruity effects
-    Trust, Reputation, and Signaling
-      Reputation systems & ratings
-      Signaling theory & information asymmetries
-      Institutional & third-party trust mechanisms
-      Bias, inflation & failures of reputation systems
-    Market Design, Pricing, and Matching
-      Auction vs fixed-price mechanisms
-      Matching efficiency & bidder entry
-      Pricing strategies & wage formation
-      Contract duration & task design
-    Platform Governance and Control
-      Centralized vs decentralized governance
-      Monitoring & control systems
-      Institutional mechanisms & power relations
-      Ethics, norms & regulation
-    Worker Participation, Motivation, and Careers
-      Motivations & barriers to participation
-      Inclusion of older & marginalized workers
-      Career paths & professional identity
-      Participation under economic constraints
-    Globalization and Spatial Dynamics of Platform Work
-      Offshoring & global competition
-      Home bias & geo-economic effects
-      Local economic conditions
-      Virtual vs physical labor mobility
-```
-
-::: {.callout-important}
-The data repository (colrev project) is currently stored separately: [fs-ise/C5-DM-vignette](https://github.com/fs-ise/C5-DM-vignette){target=_blank}.
-Before submission, the quarto manuscript (vignette) will be added as the last commit on top of the colrev projet (it should be available in the `data/data/paper.md`).
-At the moment, it will be kept separately to allow for forced-push updaes.
-
-**TODO**:
-
-- Consider switching the framework illustration (process left, principles on the right?)
-- Update links in this document
-- Include vignette (screenshot?) in the paper
-- Intro: refer to C5-DM framework and introduce annotations (5C)
+::: aside
+<a class="curate-pill"
+   href="consume-licenses.html"
+   rel="noopener noreferrer"
+   data-popup="curatePopup"
+   data-popup-width="900"
+   data-popup-height="700">
+  Consume: <span aria-hidden="true" class="curate-pill__detail">Selecting open licenses. ↗</span>
+</a>
 :::
 
 

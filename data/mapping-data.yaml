@@ -1,0 +1,61 @@
+conceptual_categories:
+  - name: Bias, Discrimination, and Inequality
+    description: >
+      Research examining systematic disparities in outcomes on platforms
+      related to gender, race, age, disability, and other social attributes.
+    core_themes:
+      - gender pay gaps and wage inequality
+      - racial and ethnic discrimination
+      - age-related and disability-related exclusion
+      - homophily and social bias
+      - stereotypes, beauty, and congruity effects
+
+  - name: Trust, Reputation, and Signaling
+    description: >
+      Studies focusing on how trust is built, maintained, and interpreted
+      in online labor and sharing economy platforms.
+    core_themes:
+      - reputation systems and ratings
+      - signaling theory and information asymmetries
+      - institutional and third-party trust mechanisms
+      - bias, inflation, and failures of reputation systems
+
+  - name: Market Design, Pricing, and Matching
+    description: >
+      Work analyzing how platform design choices structure economic
+      interactions and market outcomes.
+    core_themes:
+      - auction vs fixed-price mechanisms
+      - matching efficiency and bidder entry
+      - pricing strategies and wage formation
+      - contract duration and task design
+
+  - name: Platform Governance and Control
+    description: >
+      Research addressing how platforms govern, monitor, and regulate work
+      and exchange relationships.
+    core_themes:
+      - centralized vs decentralized governance
+      - monitoring and control systems
+      - institutional mechanisms and power relations
+      - ethics, norms, and regulation
+
+  - name: Worker Participation, Motivation, and Careers
+    description: >
+      Studies exploring why individuals participate in platform work, who
+      participates, and how such work fits into broader career trajectories.
+    core_themes:
+      - motivations and barriers to participation
+      - inclusion of older and marginalized workers
+      - career paths and professional identity
+      - participation under economic constraints
+
+  - name: Globalization and Spatial Dynamics of Platform Work
+    description: >
+      Research focusing on geographic, national, and cross-border dimensions
+      of online labor and the platform economy.
+    core_themes:
+      - offshoring and global competition
+      - home bias and geo-economic effects
+      - local economic conditions
+      - virtual versus physical labor mobility

@@ -1,0 +1,8 @@
+---
+title: "Control: using standard formats"
+format: html
+execute:
+  freeze: auto
+---
+
+TODO

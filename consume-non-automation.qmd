@@ -1,0 +1,8 @@
+---
+title: "Consume: when automation is not appropriate"
+format: html
+execute:
+  freeze: auto
+---
+
+TODO

@@ -5,17 +5,5 @@ execute:
   freeze: auto
 ---
 
-
-
-Store data in a version-controlled folder (e.g., Git
-or a similar tool) to organize and keep track of all
-review materials. Synchronize repositories to leverage
-the advantages of both local and remote repository man-
-agement.
-
-
-text and images explaining the curate (Repository, ...)
-
-Example image:
-
-![Data structures](figures/recommendation.png)
+Store data in a version-controlled folder (e.g., Git or a similar tool) to organize and keep track of all review materials.
+Synchronize repositories to leverage the advantages of both local and remote repository management.

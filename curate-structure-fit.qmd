@@ -1,0 +1,116 @@
+---
+title: "Curation info"
+format: html
+execute:
+  freeze: auto
+---
+
+## Fit of data structure and review type
+
+In line with recommendation XY, data structures range from unstructured to structured; they should be aligned with the type of review.
+
+![Data structures](figures/data_structures.png)
+
+For other review methodologies, different data extraction approaches must be considered.
+The following examples were added for illustration purposes:
+
+- Bibliometric data ([TODO](temp_file.txt){target=_blank}).
+- Emergent coding ([TODO](temp_file.txt){target=_blank}) in line with the recommendations of @GioiaEtAl2013 and the YAML workflow of @Wang2022.
+<!--
+https://aisel.aisnet.org/acis2022/17/
+https://blairwang.b-cdn.net/attachments/ACIS2022-YAML-Slides-rev02.pdf
+-->
+
+For other review methodologies, different data analysis approaches must be considered.
+The following examples were added for illustration purposes:
+
+- A bibliometric analysis:
+
+```{python}
+#| label: fig-citation-network
+#| fig-cap: "Citation network (generated from [TODO](link))"
+#| output-location: column
+#| echo: true
+#| message: false
+#| warning: false
+
+from pathlib import Path
+import pandas as pd
+import matplotlib.pyplot as plt
+import networkx as nx
+
+csv_path = Path("data/citation_edges.csv")
+df = pd.read_csv(csv_path)
+
+G = nx.from_pandas_edgelist(
+    df,
+    source="citing",
+    target="cited",
+    create_using=nx.DiGraph()
+)
+
+years = {}
+years.update(dict(zip(df["citing"], df["citing_year"])))
+years.update(dict(zip(df["cited"], df["cited_year"])))
+nx.set_node_attributes(G, years, "year")
+
+pos = nx.spring_layout(G, seed=7, k=0.6)
+
+year_attr = nx.get_node_attributes(G, "year")
+
+years_sorted = sorted({y for y in year_attr.values() if y is not None})
+year_to_x = {y: i for i, y in enumerate(years_sorted)}
+
+pos2 = nx.spring_layout(G, seed=7, k=0.6)
+for n in G.nodes:
+    y = year_attr.get(n)
+    if y is not None:
+        pos2[n][0] = year_to_x[y]
+
+plt.figure(figsize=(8, 6))
+nx.draw_networkx_edges(G, pos2, arrows=True, arrowstyle="-|>", arrowsize=10, width=0.8, alpha=0.45)
+nx.draw_networkx_nodes(G, pos2, node_size=280)
+nx.draw_networkx_labels(G, pos2, font_size=7)
+plt.title("Citation network (layered by year)")
+plt.axis("off")
+plt.tight_layout()
+plt.show()
+```
+
+- A mapping (in line with scoping reviews **TODO: link to data in caption**)
+
+```{mermaid}
+mindmap
+  root((Platform economy research topics))
+    Bias, Discrimination, and Inequality
+      Gender pay gaps & wage inequality
+      Racial & ethnic discrimination
+      Age-related & disability-related exclusion
+      Homophily & social bias
+      Stereotypes, beauty & congruity effects
+    Trust, Reputation, and Signaling
+      Reputation systems & ratings
+      Signaling theory & information asymmetries
+      Institutional & third-party trust mechanisms
+      Bias, inflation & failures of reputation systems
+    Market Design, Pricing, and Matching
+      Auction vs fixed-price mechanisms
+      Matching efficiency & bidder entry
+      Pricing strategies & wage formation
+      Contract duration & task design
+    Platform Governance and Control
+      Centralized vs decentralized governance
+      Monitoring & control systems
+      Institutional mechanisms & power relations
+      Ethics, norms & regulation
+    Worker Participation, Motivation, and Careers
+      Motivations & barriers to participation
+      Inclusion of older & marginalized workers
+      Career paths & professional identity
+      Participation under economic constraints
+    Globalization and Spatial Dynamics of Platform Work
+      Offshoring & global competition
+      Home bias & geo-economic effects
+      Local economic conditions
+      Virtual vs physical labor mobility
+```

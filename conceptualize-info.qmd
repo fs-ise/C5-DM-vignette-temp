@@ -1,0 +1,18 @@
+---
+title: "Conceptualize: Raw vs primary data"
+format: html
+execute:
+  freeze: auto
+---
+
+Record metadata is curated as follows:
+
+- Data retrieved in the search is stored in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory; the [Git history of this path](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search){target=_blank} shows that the files were preserved in their original form, i.e., treated as raw data
+- Records were imported into the [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib){target=_blank} as the primary data structure; the [Git history of this file](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib){target=_blank} documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)
+
+For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev [@WagnerPrester2025].
+BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.
+
+Data was structured as follows:
+
+![Data structures](figures/recommendation.png)

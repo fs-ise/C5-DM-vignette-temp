@@ -1,0 +1,8 @@
+---
+title: "Collect: transparency on data access"
+format: html
+execute:
+  freeze: auto
+---
+
+TODO

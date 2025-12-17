@@ -1,0 +1,111 @@
+concept: Biases in Platform Work
+review_stage: paper_level_evidence
+last_updated: 2025-12-15
+
+papers:
+
+  - study_id: rosenblat2018uber
+    citation_key: RosenblatEtAl2018
+    year: 2018
+    platform: Uber
+    platform_type: ride_hailing
+    method: qualitative_field_study
+    data: interviews
+    sample: drivers
+    bias_type: algorithmic_visibility_bias
+    bias_mechanism: algorithmic_matching_and_ranking
+    evidence_level: strong
+    outcome_affected: task_access
+    direction_of_bias: favors_highly_visible_workers
+    key_result: >
+      Algorithmic control mechanisms differentially allocate rides,
+      reinforcing cumulative advantage among drivers.
+    notes: >
+      Visibility bias is opaque to workers and difficult to contest.
+
+  - study_id: cook2018airbnb
+    citation_key: CookEtAl2018
+    year: 2018
+    platform: Airbnb
+    platform_type: accommodation
+    method: audit_experiment
+    data: field_experiment
+    sample: hosts
+    bias_type: rating_bias
+    bias_mechanism: customer_discrimination
+    evidence_level: strong
+    outcome_affected: booking_probability
+    direction_of_bias: disadvantages_minority_hosts
+    key_result: >
+      Hosts with African-American–sounding names receive fewer bookings
+      and lower ratings despite equivalent offerings.
+    notes: >
+      Bias is mediated through customer choice rather than platform rules alone.
+
+  - study_id: hannak2017bias
+    citation_key: HannakEtAl2017
+    year: 2017
+    platform: multiple
+    platform_type: online_marketplaces
+    method: algorithmic_audit
+    data: large_scale_observational
+    sample: workers
+    bias_type: rating_bias
+    bias_mechanism: subjective_evaluations
+    evidence_level: strong
+    outcome_affected: reputation_scores
+    direction_of_bias: systematic_demographic_distortion
+    key_result: >
+      Online reputation systems encode demographic biases even when
+      service quality is controlled.
+    notes: >
+      Demonstrates structural bias rather than isolated discrimination.
+
+  - study_id: wood2019global
+    citation_key: WoodEtAl2019
+    year: 2019
+    platform: multiple
+    platform_type: online_labor
+    method: mixed_methods
+    data: surveys_and_interviews
+    sample: global_workers
+    bias_type: geographic_bias
+    bias_mechanism: client_location_preferences
+    evidence_level: strong
+    outcome_affected: wages
+    direction_of_bias: disadvantages_global_south_workers
+    key_result: >
+      Workers in low-income countries receive systematically lower pay
+      and fewer high-value tasks.
+    notes: >
+      Bias persists even when skills and experience are comparable.
+
+  - study_id: kuehl2022entry
+    citation_key: KuehlEtAl2022
+    year: 2022
+    platform: freelance_marketplace
+    platform_type: online_freelance
+    method: longitudinal_analysis
+    data: platform_logs
+    sample: new_and_incumbent_workers
+    bias_type: experience_lock_in_bias
+    bias_mechanism: reputation_thresholds
+    evidence_level: moderate_to_strong
+    outcome_affected: matching_probability
+    direction_of_bias: favors_incumbents
+    key_result: >
+      Early experience thresholds significantly reduce entry
+      opportunities for new workers.
+    notes: >
+      Closely aligned with cumulative advantage dynamics.
+
+aggregation_hints:
+  suggested_groupings:
+    - bias_type
+    - platform_type
+    - method
+    - outcome_affected
+  possible_aggregations:
+    - frequency_of_bias_types
+    - bias_by_platform_type
+    - bias_by_methodological_design
