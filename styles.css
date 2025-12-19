@@ -4,7 +4,7 @@ p {
   hyphens: auto;          /* makes justification look much better */
 }
 
-a.curate-pill{
+a.pill{
   text-decoration:none;
   display:inline-flex;
   align-items:center;
@@ -16,7 +16,7 @@ a.curate-pill{
   background:#fef3c7;
   color:#92400e;
 
-  font-size:.85em;
+  font-size:1em; /* was .85em */
   font-weight:700;
   cursor:pointer;
   user-select:none;
@@ -25,13 +25,18 @@ a.curate-pill{
   transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
 }
 
-a.curate-pill:hover{
+a.pill:hover{
   transform: translateY(-1px);
   box-shadow: 0 2px 0 rgba(0,0,0,.05), 0 0 0 3px rgba(59,130,246,.32);
   filter: brightness(0.98);
 }
 
-.curate-pill__detail{
+.pill__detail{
   font-size:1em;
   opacity:.85;
+}
+
+.margin-aside{
+  width: 20rem;        /* try 18–28rem */
+  max-width: 26rem;    /* optional */
 }
