@@ -61,7 +61,7 @@ The review is conducted using a [shared GitHub repository](https://github.com/fs
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Curate: <span aria-hidden="true" class="curate-pill__detail">Store data in a version-controlled folder. ↗</span>
+  ⧉ Version-control data (Curate).
 </a>
 :::
 
@@ -78,7 +78,7 @@ The resulting query formulations were systematically tabulated to document the c
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Control: <span aria-hidden="true" class="curate-pill__detail">Use standard file formats. ↗</span>
+  ⧉ Use standard file formats (Control). 
 </a>
 :::
 
@@ -89,7 +89,7 @@ The resulting query formulations were systematically tabulated to document the c
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Conceptualize: <span aria-hidden="true" class="curate-pill__detail">Track raw and primary records. ↗</span>
+  ⧉ Link raw and primary records (Conceptualize).
 </a>
 :::
 
@@ -100,7 +100,7 @@ The resulting query formulations were systematically tabulated to document the c
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Consume: <span aria-hidden="true" class="curate-pill__detail">Reuse prior review data. ↗</span>
+  ⧉ Reuse prior review data (Consume).
 </a>
 :::
 
@@ -162,7 +162,7 @@ The search strategie are stored in JSON format together with the raw data files 
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Collect: <span aria-hidden="true" class="curate-pill__detail">Design effective search strategies. ↗</span>
+  ⧉ Design effective search strategies (Collect).
 </a>
 :::
 
@@ -173,7 +173,7 @@ The search strategie are stored in JSON format together with the raw data files 
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Collect: <span aria-hidden="true" class="curate-pill__detail">Report database coverage. ↗</span>
+  ⧉ Report database coverage (Collect).
 </a>
 :::
 
@@ -193,7 +193,7 @@ Deduplication changes are in the [dedupe commits](https://github.com/search?q=re
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Collect: <span aria-hidden="true" class="curate-pill__detail">Prepare (meta)data. ↗</span>
+  ⧉ Prepare (meta)data (Collect).
 </a>
 :::
 
@@ -217,7 +217,7 @@ Results were therefore reverted ([ref](temp_file.txt)) and a fully manual prescr
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Control: <span aria-hidden="true" class="curate-pill__detail">Evaluate changes. ↗</span>
+  ⧉ Evaluate changes (Control).
 </a>
 :::
 
@@ -236,7 +236,7 @@ Results were therefore reverted ([ref](temp_file.txt)) and a fully manual prescr
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Consume: <span aria-hidden="true" class="curate-pill__detail">Avoid ineffective automation. ↗</span>
+  ⧉ Avoid ineffective automation (Consume).
 </a>
 :::
 
@@ -261,7 +261,7 @@ In line with the methodology of systematic reviews [@HigginsGreen2008;@SmithEtAl
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Curate: <span aria-hidden="true" class="curate-pill__detail">Align data structure and methodology. ↗</span>
+  ⧉ Align data with methods (Curate).
 </a>
 :::
 
@@ -368,7 +368,7 @@ To make the review reusable, the data was published on GitHub under the [CC BY 4
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Curate: <span aria-hidden="true" class="curate-pill__detail">Share data for reuse. ↗</span>
+  ⧉ Share data for reuse (Curate).
 </a>
 :::
 
@@ -379,7 +379,7 @@ To make the review reusable, the data was published on GitHub under the [CC BY 4
    data-popup="curatePopup"
    data-popup-width="900"
    data-popup-height="700">
-  Consume: <span aria-hidden="true" class="curate-pill__detail">Select open licenses. ↗</span>
+  ⧉ Select open licenses (Consume).
 </a>
 :::
 
