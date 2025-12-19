@@ -9,7 +9,7 @@ manuscript:
 format:
   html:
     grid:
-      body-width: 900px
+      body-width: 800px
   # docx: default
   # pdf: default
 

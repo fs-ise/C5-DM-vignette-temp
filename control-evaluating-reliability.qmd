@@ -6,3 +6,5 @@ execute:
 ---
 
 TODO
+
+![Data structures](figures/illustration-lr-transparency.png)

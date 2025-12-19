@@ -5,4 +5,4 @@ execute:
   freeze: auto
 ---
 
-TODO
+TODO: mention BibTex and JSON.
