@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Curate info</title>
+<title>Select open licenses (Consume)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="curate-info_files/libs/clipboard/clipboard.min.js"></script>
-<script src="curate-info_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="curate-info_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="curate-info_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="curate-info_files/libs/quarto-html/popper.min.js"></script>
-<script src="curate-info_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="curate-info_files/libs/quarto-html/anchor.min.js"></script>
-<link href="curate-info_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="curate-info_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="curate-info_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="curate-info_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="curate-info_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="consume-select-open-licenses_files/libs/clipboard/clipboard.min.js"></script>
+<script src="consume-select-open-licenses_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="consume-select-open-licenses_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="consume-select-open-licenses_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="consume-select-open-licenses_files/libs/quarto-html/popper.min.js"></script>
+<script src="consume-select-open-licenses_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="consume-select-open-licenses_files/libs/quarto-html/anchor.min.js"></script>
+<link href="consume-select-open-licenses_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="consume-select-open-licenses_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="consume-select-open-licenses_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="consume-select-open-licenses_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="consume-select-open-licenses_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Curate info</h1>
+<h1 class="title">Select open licenses (Consume)</h1>
 </div>
 
 
@@ -64,7 +64,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Store data in a version-controlled folder (e.g., Git or a similar tool) to organize and keep track of all review materials. Synchronize repositories to leverage the advantages of both local and remote repository management.</p>
+<p>Select an explicit open license for review outputs (data, code, and documentation) to enable lawful reuse and to make reuse expectations unambiguous.</p>
+<p><strong>Why this matters</strong></p>
+<ul>
+<li><strong>Reusable by default:</strong> Without a license, others often cannot legally reuse or adapt the materials—even if they are publicly accessible.</li>
+<li><strong>Clear downstream rights:</strong> Open licenses enable cumulative research (reuse, remix, update) and reduce friction for collaborators and adopters.</li>
+<li><strong>Compatibility and compliance:</strong> Licensing choices determine whether artifacts can be combined with other open datasets, tools, and repositories.</li>
+</ul>
+<p><strong>Practical implementation</strong></p>
+<ul>
+<li><p>Choose a license that matches the artifact type:</p>
+<ul>
+<li><strong>Data (evidence tables, screening decisions):</strong> e.g., <strong>CC BY 4.0</strong> (attribution required) or <strong>CC0</strong> (public-domain dedication) when appropriate.</li>
+<li><strong>Code (scripts, pipelines):</strong> a standard OSI-approved software license (e.g., <strong>MIT</strong>, <strong>Apache-2.0</strong>).</li>
+<li><strong>Text (protocols, documentation):</strong> an open content license (often <strong>CC BY 4.0</strong>).</li>
+</ul></li>
+<li><p>Document the license in the repository root (e.g., <code>LICENSE</code>/<code>LICENSE.txt</code>) and state how to cite the dataset.</p></li>
+<li><p>Check third-party constraints (publishers, database terms, copyrighted PDFs) and license only what you have the right to share.</p></li>
+</ul>
 
 </main>
 <!-- /main column -->

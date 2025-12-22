@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Collect: preparation procedures</title>
+<title>Link raw and primary records (Conceptualize)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="collect-preparation-procedures_files/libs/clipboard/clipboard.min.js"></script>
-<script src="collect-preparation-procedures_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="collect-preparation-procedures_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="collect-preparation-procedures_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="collect-preparation-procedures_files/libs/quarto-html/popper.min.js"></script>
-<script src="collect-preparation-procedures_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="collect-preparation-procedures_files/libs/quarto-html/anchor.min.js"></script>
-<link href="collect-preparation-procedures_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="collect-preparation-procedures_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="collect-preparation-procedures_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="collect-preparation-procedures_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="collect-preparation-procedures_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="conceptualize-raw-primary_files/libs/clipboard/clipboard.min.js"></script>
+<script src="conceptualize-raw-primary_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="conceptualize-raw-primary_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="conceptualize-raw-primary_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="conceptualize-raw-primary_files/libs/quarto-html/popper.min.js"></script>
+<script src="conceptualize-raw-primary_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="conceptualize-raw-primary_files/libs/quarto-html/anchor.min.js"></script>
+<link href="conceptualize-raw-primary_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="conceptualize-raw-primary_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="conceptualize-raw-primary_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="conceptualize-raw-primary_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="conceptualize-raw-primary_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Collect: preparation procedures</h1>
+<h1 class="title">Link raw and primary records (Conceptualize)</h1>
 </div>
 
 
@@ -64,7 +64,37 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TODO</p>
+<!--
+
+Record metadata is curated as follows:
+
+- Data retrieved in the search is stored in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory; the [Git history of this path](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search){target=_blank} shows that the files were preserved in their original form, i.e., treated as raw data
+- Records were imported into the [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib){target=_blank} as the primary data structure; the [Git history of this file](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib){target=_blank} documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)
+
+For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev [@WagnerPrester2025].
+BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.
+
+Data was structured as follows:
+
+![Data structures](figures/recommendation.png)
+
+-->
+<p>Explicitly distinguish and connect <em>raw</em> data (as retrieved from sources) with <em>primary</em> data (the curated records used in the review).</p>
+<p><strong>Illustration</strong> <img src="figures/recommendation.png" class="img-fluid" alt="Linking raw and primary records"></p>
+<p><strong>Why this matters</strong></p>
+<ul>
+<li><strong>Conceptual clarity:</strong> Separating raw from primary records makes explicit which data are untouched inputs and which are analytically curated.</li>
+<li><strong>Traceability of evidence:</strong> Each primary record can be traced back to its raw source, supporting transparency and auditability.</li>
+<li><strong>Interpretability of changes:</strong> Clear links help reviewers and collaborators understand <em>how</em> and <em>why</em> records evolved over time.</li>
+</ul>
+<p><strong>Practical implementation</strong></p>
+<ul>
+<li>Store <strong>raw search outputs</strong> unchanged in a dedicated directory (e.g., <code>data/search/</code>), preserving original formats and content.</li>
+<li>Import records into a <strong>single primary data structure</strong> (e.g., <code>data/records.bib</code>) that serves as the authoritative evidence base for the review.</li>
+<li>Use <strong>BibTeX (<code>.bib</code>)</strong> for primary record metadata to ensure machine readability and compatibility with tooling.</li>
+<li>Rely on version control to document record evolution (e.g., metadata corrections, merges, screening decisions) via the file’s commit history.</li>
+<li>Apply consistent formatting and normalization using automated tooling (e.g., CoLRev) to keep changes interpretable in Git diffs.</li>
+</ul>
 
 </main>
 <!-- /main column -->

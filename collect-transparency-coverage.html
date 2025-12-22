@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Conceptualize: Raw vs primary data</title>
+<title>Report database coverage (Collect)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="conceptualize-info_files/libs/clipboard/clipboard.min.js"></script>
-<script src="conceptualize-info_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="conceptualize-info_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="conceptualize-info_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="conceptualize-info_files/libs/quarto-html/popper.min.js"></script>
-<script src="conceptualize-info_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="conceptualize-info_files/libs/quarto-html/anchor.min.js"></script>
-<link href="conceptualize-info_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="conceptualize-info_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="conceptualize-info_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="conceptualize-info_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="conceptualize-info_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="collect-transparency-coverage_files/libs/clipboard/clipboard.min.js"></script>
+<script src="collect-transparency-coverage_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="collect-transparency-coverage_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="collect-transparency-coverage_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="collect-transparency-coverage_files/libs/quarto-html/popper.min.js"></script>
+<script src="collect-transparency-coverage_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="collect-transparency-coverage_files/libs/quarto-html/anchor.min.js"></script>
+<link href="collect-transparency-coverage_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="collect-transparency-coverage_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="collect-transparency-coverage_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="collect-transparency-coverage_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="collect-transparency-coverage_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Conceptualize: Raw vs primary data</h1>
+<h1 class="title">Report database coverage (Collect)</h1>
 </div>
 
 
@@ -64,19 +64,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Record metadata is curated as follows:</p>
+<p>Report which databases, APIs, and indexes were searched—and what parts of the literature they do (and do not) cover.</p>
+<p><strong>Why this matters</strong></p>
 <ul>
-<li>Data retrieved in the search is stored in the <a href="https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search" target="_blank">data/search</a> directory; the <a href="https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search" target="_blank">Git history of this path</a> shows that the files were preserved in their original form, i.e., treated as raw data</li>
-<li>Records were imported into the <a href="https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib" target="_blank">data/records.bib</a> as the primary data structure; the <a href="https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib" target="_blank">Git history of this file</a> documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)</li>
+<li><strong>Interpretable scope:</strong> Coverage determines what your evidence base can legitimately claim (and what it cannot).</li>
+<li><strong>Publisher and access bias:</strong> Some sources are skewed toward particular publishers, regions, venues, or document types.</li>
+<li><strong>Open-access constraints:</strong> API-based and LLM-supported workflows may disproportionately rely on open-access or freely retrievable content, which can systematically exclude paywalled literature and bias conclusions.</li>
 </ul>
-<p>For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev <span class="citation" data-cites="WagnerPrester2025">[@WagnerPrester2025]</span>. BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.</p>
-<p>Data was structured as follows:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="figures/recommendation.png" class="img-fluid figure-img"></p>
-<figcaption>Data structures</figcaption>
-</figure>
-</div>
+<p><strong>Practical implementation</strong></p>
+<ul>
+<li>List every source searched (database/API), the date(s) of search, and the exact query version used.</li>
+<li>Describe key coverage characteristics (e.g., disciplines, publication types, language/region, major publisher concentration).</li>
+<li>Explicitly state access limitations (e.g., “API returns only open metadata,” “full texts available primarily for OA items,” “LLM extraction limited to accessible PDFs”).</li>
+<li>Where feasible, triangulate across complementary sources (e.g., bibliographic index + publisher-agnostic registry) and document the rationale.</li>
+</ul>
 
 </main>
 <!-- /main column -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Curate: data publishing</title>
+<title>Prepare (meta)data (Collect)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="curate-data-publishing_files/libs/clipboard/clipboard.min.js"></script>
-<script src="curate-data-publishing_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="curate-data-publishing_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="curate-data-publishing_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="curate-data-publishing_files/libs/quarto-html/popper.min.js"></script>
-<script src="curate-data-publishing_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="curate-data-publishing_files/libs/quarto-html/anchor.min.js"></script>
-<link href="curate-data-publishing_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="curate-data-publishing_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="curate-data-publishing_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="curate-data-publishing_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="curate-data-publishing_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="collect-prepare_files/libs/clipboard/clipboard.min.js"></script>
+<script src="collect-prepare_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="collect-prepare_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="collect-prepare_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="collect-prepare_files/libs/quarto-html/popper.min.js"></script>
+<script src="collect-prepare_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="collect-prepare_files/libs/quarto-html/anchor.min.js"></script>
+<link href="collect-prepare_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="collect-prepare_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="collect-prepare_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="collect-prepare_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="collect-prepare_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Curate: data publishing</h1>
+<h1 class="title">Prepare (meta)data (Collect)</h1>
 </div>
 
 
@@ -64,7 +64,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TODO</p>
+<p>Prepare bibliographic metadata and full-text data so they are complete, consistent, machine-readable, and reliably linked for downstream steps (dedupe, screening, extraction, synthesis).</p>
+<p><strong>Why this matters</strong></p>
+<ul>
+<li><strong>Higher-quality evidence base:</strong> Clean metadata improves deduplication, retrieval, and screening accuracy.</li>
+<li><strong>Automation readiness:</strong> Machine-readable full texts (searchable PDFs/OCR) enable computational extraction, annotation, and reproducible analyses.</li>
+<li><strong>Traceability across artifacts:</strong> Correct links between records and PDFs ensure that every extracted data point can be traced back to the underlying document.</li>
+</ul>
+<p><strong>Practical implementation</strong></p>
+<ul>
+<li><strong>Enrich and validate metadata via authoritative APIs</strong> (e.g., Crossref) to fill missing fields (DOI, venue, year, authors) and normalize identifiers.</li>
+<li>Ensure <strong>consistent identifiers</strong> (DOI/URL) and standardized fields across records to support merging and reproducible filtering.</li>
+<li>Make full texts <strong>machine-readable</strong> (prefer searchable PDFs; apply OCR when needed) and store them with stable file names/paths.</li>
+<li>Maintain <strong>bidirectional links</strong> between <code>records</code> (metadata) and <code>pdf</code> documents (full text), so each record resolves to exactly the corresponding document(s) and vice versa.</li>
+</ul>
 
 </main>
 <!-- /main column -->

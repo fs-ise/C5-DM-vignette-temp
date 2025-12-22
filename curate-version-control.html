@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Consume: when automation is not appropriate</title>
+<title>Version-control data (Curate)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="consume-non-automation_files/libs/clipboard/clipboard.min.js"></script>
-<script src="consume-non-automation_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="consume-non-automation_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="consume-non-automation_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="consume-non-automation_files/libs/quarto-html/popper.min.js"></script>
-<script src="consume-non-automation_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="consume-non-automation_files/libs/quarto-html/anchor.min.js"></script>
-<link href="consume-non-automation_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="consume-non-automation_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="consume-non-automation_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="consume-non-automation_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="consume-non-automation_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="curate-version-control_files/libs/clipboard/clipboard.min.js"></script>
+<script src="curate-version-control_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="curate-version-control_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="curate-version-control_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="curate-version-control_files/libs/quarto-html/popper.min.js"></script>
+<script src="curate-version-control_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="curate-version-control_files/libs/quarto-html/anchor.min.js"></script>
+<link href="curate-version-control_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="curate-version-control_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="curate-version-control_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="curate-version-control_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="curate-version-control_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Consume: when automation is not appropriate</h1>
+<h1 class="title">Version-control data (Curate)</h1>
 </div>
 
 
@@ -64,7 +64,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TODO</p>
+<!--
+
+Store data in a version-controlled folder (e.g., Git or a similar tool) to organize and keep track of all review materials.
+Synchronize repositories to leverage the advantages of both local and remote repository management.
+
+One place to store data (especially when working in a team)
+
+Transparency of data changes
+
+Enabling control (review, training and undoing changes)
+
+Distributed version control: backup of data on multiple machines, and enabling the team to take advantage of local computational resources (typically cheaper for researchers) - e.g., for API querying, deduplication or advanced computational techniques (ML, LLM) that perform on the full-text documents
+-->
+<p><strong>Why it matters</strong></p>
+<ul>
+<li><strong>One shared place for the evidence base</strong>: A single repository helps teams coordinate on the same (meta)data, protocols, and outputs.</li>
+<li><strong>Transparent change history</strong>: Every modification is recorded (who changed what, when, and why), enabling traceability of the evolving evidence base.</li>
+<li>*Stronger control over data quality**: Version control supports review (e.g., pull requests), training/standardization of team practices, and reliable rollback/undo of problematic changes.</li>
+</ul>
+<p><strong>Practical implementation</strong></p>
+<ul>
+<li>Maintain a <strong>remote repository</strong> (e.g., GitHub) for collaboration and backup, and <strong>local clones</strong> for day-to-day work and computation.</li>
+<li>Use <strong>distributed version control</strong> to leverage local computing resources (often cheaper and faster for researchers) for tasks like API querying, deduplication, and compute-intensive methods (ML/LLM) on full texts—while keeping results reproducible and auditable.</li>
+</ul>
 
 </main>
 <!-- /main column -->

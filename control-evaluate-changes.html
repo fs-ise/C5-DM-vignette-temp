@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Consume: license selection</title>
+<title>Evaluate changes (Control)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,18 +23,18 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="consume-licenses_files/libs/clipboard/clipboard.min.js"></script>
-<script src="consume-licenses_files/libs/quarto-html/quarto.js" type="module"></script>
-<script src="consume-licenses_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="consume-licenses_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="consume-licenses_files/libs/quarto-html/popper.min.js"></script>
-<script src="consume-licenses_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="consume-licenses_files/libs/quarto-html/anchor.min.js"></script>
-<link href="consume-licenses_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="consume-licenses_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="consume-licenses_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="consume-licenses_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="consume-licenses_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="control-evaluate-changes_files/libs/clipboard/clipboard.min.js"></script>
+<script src="control-evaluate-changes_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="control-evaluate-changes_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="control-evaluate-changes_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="control-evaluate-changes_files/libs/quarto-html/popper.min.js"></script>
+<script src="control-evaluate-changes_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="control-evaluate-changes_files/libs/quarto-html/anchor.min.js"></script>
+<link href="control-evaluate-changes_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="control-evaluate-changes_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="control-evaluate-changes_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="control-evaluate-changes_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="control-evaluate-changes_files/libs/bootstrap/bootstrap-0595c3adc79cf3968d79df64b99d9203.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Consume: license selection</h1>
+<h1 class="title">Evaluate changes (Control)</h1>
 </div>
 
 
@@ -64,7 +64,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TODO</p>
+<p>Evaluate and validate changes to the evidence base—especially when they are introduced by automation, bulk edits, or new contributors—before they become part of the authoritative dataset.</p>
+<p><strong>Why this matters</strong></p>
+<ul>
+<li><strong>Protect evidence integrity:</strong> Small metadata errors or inconsistent screening/extraction decisions can cascade into incorrect synthesis results.</li>
+<li><strong>Detect unintended side effects:</strong> Automated transformations (dedupe, normalization, LLM support) can silently introduce systematic errors.</li>
+<li><strong>Maintain accountability:</strong> Controlled evaluation makes it clear which changes were accepted, rejected, or reverted—and why.</li>
+</ul>
+<p><strong>Practical implementation</strong></p>
+<ul>
+<li>Use <strong>reviewable change units</strong> (small commits, tagged steps, pull requests) so changes can be inspected and discussed.</li>
+<li>Validate with <strong>automated checks</strong> where possible (linting, schema checks, deterministic scripts) and <strong>manual spot checks</strong> for high-impact fields.</li>
+<li>For algorithmic/LLM steps, benchmark against a <strong>human-coded reference sample</strong> (agreement/error analysis) and revert if reliability is insufficient.</li>
+<li>Record evaluation outcomes in the repository (commit messages, PR discussions, or a short changelog) to preserve decision rationale.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/illustration-lr-transparency.png" class="img-fluid figure-img"></p>
+<figcaption>Illustration of change transparency and control</figcaption>
+</figure>
+</div>
 
 </main>
 <!-- /main column -->

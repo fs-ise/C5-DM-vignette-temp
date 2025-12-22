@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Control: using standard formats</title>
+<title>Use standard file formats (Control)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Control: using standard formats</h1>
+<h1 class="title">Use standard file formats (Control)</h1>
 </div>
 
 
@@ -64,7 +64,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TODO: mention BibTex and JSON.</p>
+<p>Use widely adopted, non-proprietary file formats to store and exchange review data (meta-data, protocols, evidence tables, and outputs).</p>
+<p><strong>Why this matters</strong></p>
+<ul>
+<li><strong>Tool independence and longevity:</strong> Standard formats reduce lock-in and keep the evidence usable even if specific tools change.</li>
+<li><strong>Quality control and validation:</strong> Machine-readable formats enable automated checks (schema validation, linting, diffing) and make errors easier to detect.</li>
+<li><strong>Reproducibility and traceability:</strong> Clean text-based formats integrate well with version control, so changes can be reviewed and compared reliably.</li>
+</ul>
+<p><strong>Practical implementation</strong></p>
+<ul>
+<li>Use <strong>BibTeX (<code>.bib</code>)</strong> for bibliographic metadata and record-level information.</li>
+<li>Use <strong>JSON (<code>.json</code>)</strong> for structured artifacts such as search strategies and raw query specifications.</li>
+<li>Prefer plain-text formats that support <strong>stable diffs</strong> in Git, so even small changes remain visible and reviewable.</li>
+<li>Document expected fields and conventions (e.g., required BibTeX keys; JSON schemas for search strategies) to ensure consistency across contributors.</li>
+</ul>
 
 </main>
 <!-- /main column -->

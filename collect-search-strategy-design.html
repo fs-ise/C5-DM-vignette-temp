@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Collect: Search strategy design</title>
+<title>Design effective search strategies (Collect)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Collect: Search strategy design</h1>
+<h1 class="title">Design effective search strategies (Collect)</h1>
 </div>
 
 
@@ -64,7 +64,20 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>TODO</p>
+<p>Design search strategies that translate the review question into precise, reproducible query formulations across data sources.</p>
+<p><strong>Why this matters</strong></p>
+<ul>
+<li><strong>Data-informed searching:</strong> Effective strategies build on existing data—known queries, seed papers, and prior inclusion/exclusion decisions—to systematically improve recall and precision.</li>
+<li><strong>Transparency and reproducibility:</strong> Explicit, well-documented queries allow others to understand, rerun, and assess the search.</li>
+<li><strong>Control over scope:</strong> Data-driven refinement helps justify why certain literatures are included or excluded.</li>
+</ul>
+<p><strong>Practical implementation</strong></p>
+<ul>
+<li>Define the <strong>core concept(s)</strong> and expand with <strong>synonyms, spelling variants, and related terms</strong> informed by prior reviews and seed sets.</li>
+<li>Use <strong>known relevant and irrelevant papers</strong> to iteratively test and refine queries.</li>
+<li>Adapt queries to each source (API/database fields, operators, limits) while keeping the conceptual structure consistent.</li>
+<li>Store final strategies as <strong>structured, executable artifacts</strong> (e.g., JSON query specifications) and version them together with the retrieved data.</li>
+</ul>
 
 </main>
 <!-- /main column -->
