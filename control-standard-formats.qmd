@@ -1,8 +1,21 @@
 ---
-title: "Control: using standard formats"
+title: "Use standard file formats (Control)"
 format: html
 execute:
   freeze: auto
 ---
 
-TODO: mention BibTex and JSON.
+Use widely adopted, non-proprietary file formats to store and exchange review data (meta-data, protocols, evidence tables, and outputs).
+
+**Why this matters**
+
+- **Tool independence and longevity:** Standard formats reduce lock-in and keep the evidence usable even if specific tools change.
+- **Quality control and validation:** Machine-readable formats enable automated checks (schema validation, linting, diffing) and make errors easier to detect.
+- **Reproducibility and traceability:** Clean text-based formats integrate well with version control, so changes can be reviewed and compared reliably.
+
+**Practical implementation**
+
+- Use **BibTeX (`.bib`)** for bibliographic metadata and record-level information.
+- Use **JSON (`.json`)** for structured artifacts such as search strategies and raw query specifications.
+- Prefer plain-text formats that support **stable diffs** in Git, so even small changes remain visible and reviewable.
+- Document expected fields and conventions (e.g., required BibTeX keys; JSON schemas for search strategies) to ensure consistency across contributors.

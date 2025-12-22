@@ -1,0 +1,32 @@
+---
+title: "Version-control data (Curate)"
+format: html
+execute:
+  freeze: auto
+---
+
+<!--
+
+Store data in a version-controlled folder (e.g., Git or a similar tool) to organize and keep track of all review materials.
+Synchronize repositories to leverage the advantages of both local and remote repository management.
+
+One place to store data (especially when working in a team)
+
+Transparency of data changes
+
+Enabling control (review, training and undoing changes)
+
+Distributed version control: backup of data on multiple machines, and enabling the team to take advantage of local computational resources (typically cheaper for researchers) - e.g., for API querying, deduplication or advanced computational techniques (ML, LLM) that perform on the full-text documents
+-->
+
+
+**Why it matters**
+
+- **One shared place for the evidence base**: A single repository helps teams coordinate on the same (meta)data, protocols, and outputs.
+- **Transparent change history**: Every modification is recorded (who changed what, when, and why), enabling traceability of the evolving evidence base.
+- *Stronger control over data quality**: Version control supports review (e.g., pull requests), training/standardization of team practices, and reliable rollback/undo of problematic changes.
+
+**Practical implementation**
+
+- Maintain a **remote repository** (e.g., GitHub) for collaboration and backup, and **local clones** for day-to-day work and computation.
+- Use **distributed version control** to leverage local computing resources (often cheaper and faster for researchers) for tasks like API querying, deduplication, and compute-intensive methods (ML/LLM) on full texts—while keeping results reproducible and auditable.

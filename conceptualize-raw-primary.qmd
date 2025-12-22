@@ -1,0 +1,41 @@
+---
+title: "Link raw and primary records (Conceptualize)"
+format: html
+execute:
+  freeze: auto
+---
+
+<!--
+
+Record metadata is curated as follows:
+
+- Data retrieved in the search is stored in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory; the [Git history of this path](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/search){target=_blank} shows that the files were preserved in their original form, i.e., treated as raw data
+- Records were imported into the [data/records.bib](https://github.com/fs-ise/C5-DM-vignette/blob/main/data/records.bib){target=_blank} as the primary data structure; the [Git history of this file](https://github.com/fs-ise/C5-DM-vignette/commits/main/data/records.bib){target=_blank} documents how each record evolved through the process (e.g., manual or computational change of metadata, merging of records, prescreening decisions)
+
+For primary data (record metadata), the Bibtex format was chosen and consistent formatting was ensured by CoLRev [@WagnerPrester2025].
+BibTex is machine readable and the changes can easily be interpreted when inspecting the git history.
+
+Data was structured as follows:
+
+![Data structures](figures/recommendation.png)
+
+-->
+
+Explicitly distinguish and connect *raw* data (as retrieved from sources) with *primary* data (the curated records used in the review).
+
+**Illustration**
+![Linking raw and primary records](figures/recommendation.png)
+
+**Why this matters**
+
+- **Conceptual clarity:** Separating raw from primary records makes explicit which data are untouched inputs and which are analytically curated.
+- **Traceability of evidence:** Each primary record can be traced back to its raw source, supporting transparency and auditability.
+- **Interpretability of changes:** Clear links help reviewers and collaborators understand *how* and *why* records evolved over time.
+
+**Practical implementation**
+
+- Store **raw search outputs** unchanged in a dedicated directory (e.g., `data/search/`), preserving original formats and content.
+- Import records into a **single primary data structure** (e.g., `data/records.bib`) that serves as the authoritative evidence base for the review.
+- Use **BibTeX (`.bib`)** for primary record metadata to ensure machine readability and compatibility with tooling.
+- Rely on version control to document record evolution (e.g., metadata corrections, merges, screening decisions) via the file’s commit history.
+- Apply consistent formatting and normalization using automated tooling (e.g., CoLRev) to keep changes interpretable in Git diffs.

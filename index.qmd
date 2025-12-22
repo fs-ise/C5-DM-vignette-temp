@@ -56,7 +56,7 @@ The review is conducted using a [shared GitHub repository](https://github.com/fs
 
 ::: aside
 <a class="pill"
-   href="curate-info.html"
+   href="curate-version-control.html"
    rel="noopener noreferrer"
    data-popup="curatePopup"
    data-popup-width="900"
@@ -84,7 +84,7 @@ The resulting query formulations were systematically tabulated to document the c
 
 ::: aside
 <a class="pill"
-   href="conceptualize-info.html"
+   href="conceptualize-raw-primary.html"
    rel="noopener noreferrer"
    data-popup="curatePopup"
    data-popup-width="900"
@@ -168,7 +168,7 @@ The search strategie are stored in JSON format together with the raw data files 
 
 ::: aside
 <a class="pill"
-   href="collect-transparency-access.html"
+   href="collect-transparency-coverage.html"
    rel="noopener noreferrer"
    data-popup="curatePopup"
    data-popup-width="900"
@@ -188,7 +188,7 @@ Deduplication changes are in the [dedupe commits](https://github.com/search?q=re
 
 ::: aside
 <a class="pill"
-   href="collect-preparation-procedures.html"
+   href="collect-prepare.html"
    rel="noopener noreferrer"
    data-popup="curatePopup"
    data-popup-width="900"
@@ -212,7 +212,7 @@ Results were therefore reverted ([ref](temp_file.txt)) and a fully manual prescr
 
 ::: aside
 <a class="pill"
-   href="control-evaluating-reliability.html"
+   href="control-evaluate-changes.html"
    rel="noopener noreferrer"
    data-popup="curatePopup"
    data-popup-width="900"
@@ -231,7 +231,7 @@ Results were therefore reverted ([ref](temp_file.txt)) and a fully manual prescr
 
 ::: aside
 <a class="pill"
-   href="consume-non-automation.html"
+   href="consume-avoid-ineffective-automation.html"
    rel="noopener noreferrer"
    data-popup="curatePopup"
    data-popup-width="900"
@@ -256,7 +256,7 @@ In line with the methodology of systematic reviews [@HigginsGreen2008;@SmithEtAl
 
 ::: aside
 <a class="pill"
-   href="curate-structure-fit.html"
+   href="curate-align-data-with-methods.html"
    rel="noopener noreferrer"
    data-popup="curatePopup"
    data-popup-width="900"
@@ -363,7 +363,7 @@ To make the review reusable, the data was published on GitHub under the [CC BY 4
 
 ::: aside
 <a class="pill"
-   href="curate-data-publishing.html"
+   href="curate-share-data.html"
    rel="noopener noreferrer"
    data-popup="curatePopup"
    data-popup-width="900"
@@ -374,7 +374,7 @@ To make the review reusable, the data was published on GitHub under the [CC BY 4
 
 ::: aside
 <a class="pill"
-   href="consume-licenses.html"
+   href="consume-select-open-licenses.html"
    rel="noopener noreferrer"
    data-popup="curatePopup"
    data-popup-width="900"

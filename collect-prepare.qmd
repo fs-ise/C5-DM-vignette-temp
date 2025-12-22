@@ -1,0 +1,21 @@
+---
+title: "Prepare (meta)data (Collect)"
+format: html
+execute:
+  freeze: auto
+---
+
+Prepare bibliographic metadata and full-text data so they are complete, consistent, machine-readable, and reliably linked for downstream steps (dedupe, screening, extraction, synthesis).
+
+**Why this matters**
+
+- **Higher-quality evidence base:** Clean metadata improves deduplication, retrieval, and screening accuracy.
+- **Automation readiness:** Machine-readable full texts (searchable PDFs/OCR) enable computational extraction, annotation, and reproducible analyses.
+- **Traceability across artifacts:** Correct links between records and PDFs ensure that every extracted data point can be traced back to the underlying document.
+
+**Practical implementation**
+
+- **Enrich and validate metadata via authoritative APIs** (e.g., Crossref) to fill missing fields (DOI, venue, year, authors) and normalize identifiers.
+- Ensure **consistent identifiers** (DOI/URL) and standardized fields across records to support merging and reproducible filtering.
+- Make full texts **machine-readable** (prefer searchable PDFs; apply OCR when needed) and store them with stable file names/paths.
+- Maintain **links** between `records` (metadata) and `pdf` documents (full text), so each record resolves to exactly the corresponding document(s) and vice versa.

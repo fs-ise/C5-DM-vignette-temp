@@ -1,0 +1,23 @@
+---
+title: "Avoid ineffective automation (Consume)"
+format: html
+execute:
+  freeze: auto
+---
+
+**TODO: not consume?!**
+
+Use automation (especially AI/LLM tools) selectively, and avoid deploying it where it reduces reliability, transparency, or reproducibility.
+
+**Why this matters**
+
+- **Reliability varies widely:** Many AI/LLM tools can appear plausible while producing inconsistent or inaccurate outputs (e.g., unstable screening decisions, hallucinated details).
+- **Hidden bias and drift:** Model updates, prompt changes, or data access constraints can change outputs over time, undermining comparability.
+- **Accountability for evidence:** Review conclusions depend on defensible decisions—automation must be auditable and overseen.
+
+**Practical implementation**
+
+- Treat automation as **decision support**, not decision replacement—keep humans responsible for inclusion/exclusion and extracted evidence.
+- **Evaluate before adoption:** benchmark against a human-coded sample (e.g., agreement metrics, error analysis) and define minimum performance thresholds.
+- Use **reversible workflows**: isolate automated changes (branch/commit tags), document parameters/prompts, and ensure easy rollback.
+- Prioritize automation where errors are low-risk and measurable (e.g., formatting, metadata normalization) and require **manual verification** for high-stakes steps (screening, extraction, synthesis).

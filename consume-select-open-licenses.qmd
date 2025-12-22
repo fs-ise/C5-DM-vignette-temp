@@ -1,0 +1,25 @@
+---
+title: "Select open licenses (Consume)"
+format: html
+execute:
+  freeze: auto
+---
+
+Select an explicit open license for review outputs (data, code, and documentation) to enable lawful reuse and to make reuse expectations unambiguous.
+
+**Why this matters**
+
+- **Reusable by default:** Without a license, others often cannot legally reuse or adapt the materials—even if they are publicly accessible.
+- **Clear downstream rights:** Open licenses enable cumulative research (reuse, remix, update) and reduce friction for collaborators and adopters.
+- **Compatibility and compliance:** Licensing choices determine whether artifacts can be combined with other open datasets, tools, and repositories.
+
+**Practical implementation**
+
+- Choose a license that matches the artifact type:
+
+  - **Data (evidence tables, screening decisions):** e.g., **CC BY 4.0** (attribution required) or **CC0** (public-domain dedication) when appropriate.
+  - **Code (scripts, pipelines):** a standard OSI-approved software license (e.g., **MIT**, **Apache-2.0**).
+  - **Text (protocols, documentation):** an open content license (often **CC BY 4.0**).
+
+- Document the license in the repository root (e.g., `LICENSE`/`LICENSE.txt`) and state how to cite the dataset.
+- Check third-party constraints (publishers, database terms, copyrighted PDFs) and license only what you have the right to share.

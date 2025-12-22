@@ -1,0 +1,21 @@
+---
+title: "Report database coverage (Collect)"
+format: html
+execute:
+  freeze: auto
+---
+
+Report which databases, APIs, and indexes were searched—and what parts of the literature they do (and do not) cover.
+
+**Why this matters**
+
+- **Interpretable scope:** Coverage determines what your evidence base can legitimately claim (and what it cannot).
+- **Publisher and access bias:** Some sources are skewed toward particular publishers, regions, venues, or document types.
+- **Open-access constraints:** API-based and LLM-supported workflows may disproportionately rely on open-access or freely retrievable content, which can systematically exclude paywalled literature and bias conclusions.
+
+**Practical implementation**
+
+- List every source searched (database/API), the date(s) of search, and the exact query version used.
+- Describe key coverage characteristics (e.g., disciplines, publication types, language/region, major publisher concentration).
+- Explicitly state access limitations (e.g., “API returns only open metadata,” “full texts available primarily for OA items,” “LLM extraction limited to accessible PDFs”).
+- Where feasible, triangulate across complementary sources (e.g., bibliographic index + publisher-agnostic registry) and document the rationale.

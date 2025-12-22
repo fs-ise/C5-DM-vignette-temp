@@ -1,0 +1,22 @@
+---
+title: "Share data for reuse (Curate)"
+format: html
+execute:
+  freeze: auto
+---
+
+Publish the review’s curated datasets (metadata, screening decisions, extraction forms, and synthesis-ready evidence tables) so others can inspect, reuse, and extend the evidence base.
+
+**Why this matters**
+
+- **Transparency and credibility:** Shared data allows readers to verify how conclusions follow from the underlying evidence.
+- **Cumulative research:** Reusable datasets reduce duplicated effort and enable incremental updates, replications, and new syntheses.
+- **Method learning and benchmarking:** Open artifacts support training, tool comparison, and community improvement of review workflows.
+
+**Practical implementation**
+
+- Publish data in a **public repository** with clear structure (raw inputs, primary records, protocols, derived outputs) and version history.
+- Include **documentation**: README, data dictionary/schemas, and a short description of how to reproduce key outputs (e.g., PRISMA, tables, figures).
+- Provide **persistent references** where possible (release tags / archived snapshots) and recommended citation information.
+- Share reuse-critical artifacts explicitly (e.g., `records.bib`, screening decisions, extraction templates, evidence tables) while respecting licensing and access constraints.
+- Add contribution guidance (issues/PR workflow) to support corrections, extensions, and periodic updates.

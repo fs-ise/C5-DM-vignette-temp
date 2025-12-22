@@ -1,0 +1,23 @@
+---
+title: "Evaluate changes (Control)"
+format: html
+execute:
+  freeze: auto
+---
+
+Evaluate and validate changes to the evidence base—especially when they are introduced by automation, bulk edits, or new contributors—before they become part of the authoritative dataset.
+
+**Why this matters**
+
+- **Protect evidence integrity:** Small metadata errors or inconsistent screening/extraction decisions can cascade into incorrect synthesis results.
+- **Detect unintended side effects:** Automated transformations (dedupe, normalization, LLM support) can silently introduce systematic errors.
+- **Maintain accountability:** Controlled evaluation makes it clear which changes were accepted, rejected, or reverted—and why.
+
+**Practical implementation**
+
+- Use **reviewable change units** (small commits, tagged steps, pull requests) so changes can be inspected and discussed.
+- Validate with **automated checks** where possible (linting, schema checks, deterministic scripts) and **manual spot checks** for high-impact fields.
+- For algorithmic/LLM steps, benchmark against a **human-coded reference sample** (agreement/error analysis) and revert if reliability is insufficient.
+- Record evaluation outcomes in the repository (commit messages, PR discussions, or a short changelog) to preserve decision rationale.
+
+![Illustration of change transparency and control](figures/illustration-lr-transparency.png)

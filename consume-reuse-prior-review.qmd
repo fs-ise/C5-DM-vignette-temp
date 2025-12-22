@@ -1,8 +1,24 @@
 ---
-title: "Reusing prior review data"
+title: "Reuse prior review data (Consume)"
 format: html
 execute:
   freeze: auto
 ---
 
-TODO
+Reuse well-documented datasets, search strategies, and screening/extraction artifacts from prior reviews when they fit the current review’s scope.
+
+**Why this matters**
+
+- **Cumulative research:** Reuse makes review work additive over time—new evidence extends existing curated datasets instead of repeatedly rebuilding them.
+- **Efficiency without sacrificing rigor:** Prior artifacts reduce duplicated effort while keeping the workflow systematic.
+- **Stronger comparability:** Shared extraction forms, coding frames, and decision logs enable longitudinal and cross-review comparisons.
+- **Better coverage and fewer blind spots:** Prior queries and seed sets surface synonyms, venues, and edge cases that are easy to miss.
+
+**Practical implementation**
+
+- Assess fit before reuse (scope, timeframe, databases, inclusion criteria) and document what is reused *as-is* vs. adapted.
+- Reuse and adapt **search strategies** and publish them to **SearchRXiv** (search queries), so others can discover, cite, and build on them.
+- Reuse **screening decision datasets** (included/excluded decisions) from **SYNERGY datasets** to calibrate screening and support transparent decision lineage.
+- Import prior **seed sets** (key papers) to validate recall and align interpretation of inclusion criteria.
+- **Contact prior authors/review teams** to request reusable samples (e.g., screening decisions, extraction sheets, codebooks) when they are not publicly available.
+- Preserve provenance: store reused artifacts with citations/links and record reuse decisions in the protocol (what, from where, and why).

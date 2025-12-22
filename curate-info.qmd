@@ -1,9 +1,0 @@
----
-title: "Curate info"
-format: html
-execute:
-  freeze: auto
----
-
-Store data in a version-controlled folder (e.g., Git or a similar tool) to organize and keep track of all review materials.
-Synchronize repositories to leverage the advantages of both local and remote repository management.

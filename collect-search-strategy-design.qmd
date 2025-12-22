@@ -1,8 +1,21 @@
 ---
-title: "Collect: Search strategy design"
+title: "Design effective search strategies (Collect)"
 format: html
 execute:
   freeze: auto
 ---
 
-TODO
+Design search strategies that translate the review question into precise, reproducible query formulations across data sources.
+
+**Why this matters**
+
+- **Data-informed searching:** Effective strategies build on existing data—known queries, seed papers, and prior inclusion/exclusion decisions—to systematically improve recall and precision.
+- **Transparency and reproducibility:** Explicit, well-documented queries allow others to understand, rerun, and assess the search.
+- **Control over scope:** Data-driven refinement helps justify why certain literatures are included or excluded.
+
+**Practical implementation**
+
+- Define the **core concept(s)** and expand with **synonyms, spelling variants, and related terms** informed by prior reviews and seed sets.
+- Use **known relevant and irrelevant papers** to iteratively test and refine queries.
+- Adapt queries to each source (API/database fields, operators, limits) while keeping the conceptual structure consistent.
+- Store final strategies as **structured, executable artifacts** (e.g., JSON query specifications) and version them together with the retrieved data.

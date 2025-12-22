@@ -1,15 +1,40 @@
 ---
-title: "Curation info"
+title: "Align data with method (Curate)"
 format: html
 execute:
   freeze: auto
 ---
 
-## Fit of data structure and review type
+Design data structures and representations that fit the *type of review* and the *intended analytical method*.
 
-In line with recommendation XY, data structures range from unstructured to structured; they should be aligned with the type of review.
+**Why this matters**
 
-![Data structures](figures/data_structures.png)
+- **Methodological validity:** Different review types (systematic, scoping, bibliometric, qualitative synthesis) require different kinds and levels of structure.
+- **Analytical leverage:** Well-aligned data structures make analyses possible without excessive transformation or ad-hoc workarounds.
+- **Transparency and reuse:** When data reflects the logic of the method, others can more easily understand, reproduce, and extend the analysis.
+
+**Practical implementation**
+
+- Choose the **degree of structure** (unstructured → semi-structured → structured) in line with the review objective and method.
+- Align **extraction fields and schemas** with planned analyses (e.g., variables for quantitative synthesis; concepts/mechanisms for qualitative synthesis).
+- Make methodological assumptions explicit by encoding them directly in the data model.
+- Revisit and adapt data structures if the review design evolves (e.g., from mapping to synthesis).
+
+![Fit of data structure and review type](figures/data_structures.png)
+
+
+## Illustrations
+
+The following examples illustrate how different review methodologies imply different data structures and analyses.
+
+**Data extraction approaches**
+- **Bibliometric data:** Structured citation, authorship, and venue data enabling network and trend analyses ([TODO](temp_file.txt)).
+- **Emergent coding:** Semi-structured qualitative data following inductive coding principles (e.g., Gioia-style), supported by YAML-based workflows ([TODO](temp_file.txt)).
+
+**Data analysis examples**
+- **Bibliometric analysis:** Citation networks, co-authorship graphs, or thematic clusters derived from structured metadata.
+- **Scoping review mapping:** Conceptual maps that organize themes and research streams without aggregating effect sizes.
+
 
 For other review methodologies, different data extraction approaches must be considered.
 The following examples were added for illustration purposes:
