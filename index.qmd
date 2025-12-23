@@ -153,7 +153,7 @@ for s, strat, res in rows:
 print("\n:::")
 ```
 
-The search strategie are stored in JSON format together with the raw data files in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory, in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
+The search strategies are stored in JSON format together with the raw data files in the [data/search](https://github.com/fs-ise/C5-DM-vignette/tree/main/data/search){target=_blank} directory, in line with the standard of @HaddawayRethlefsenDaviesEtAl2022.
 
 ::: aside
 <a class="pill"
@@ -223,7 +223,7 @@ Results were therefore reverted ([ref](temp_file.txt)) and a fully manual prescr
 
 ::: {.callout-note title="Manual task"}
 **Trigger:** `records_deduped.bib` updated  
-**Responsible:** Two independent coders (GW anmd JP)  
+**Responsible:** Two independent coders (GW and JP)  
 **Protocol:** PRISMA TA screening rules (see `protocol/screening.md`)  
 **Expected output:** `records_screened.bib`  
 **History filter:** [prescreen](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+prescreen&type=commits&p=1)
@@ -248,7 +248,7 @@ In line with the methodology of systematic reviews [@HigginsGreen2008;@SmithEtAl
 
 ::: {.callout-note title="Manual task"}
 **Trigger:** `records_deduped.bib` updated  
-**Responsible:** Two independent coders (GW anmd JP)  
+**Responsible:** Two independent coders (GW and JP)  
 **Protocol:** data extraction form and protocol (see `protocol/data_extraction.md`)  
 **Expected output:** `extracted_evidence.yaml`  
 **History filter:** [data](https://github.com/search?q=repo%3Afs-ise%2FC5-DM-vignette+data&type=commits&p=1)
